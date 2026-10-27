@@ -1,0 +1,112 @@
+---
+pagination:
+  data: artworks
+  size: 1
+  alias: art
+permalink: "{{ art.oldPath }}"
+layout: base.njk
+eleventyComputed:
+  title: "{{ art.title }} · Gene Canning"
+  description: "{{ art.captionOriginal }}"
+---
+{% set seasonName = "" %}
+{% if art.series == "spring-season-paintings" %}{% set seasonName = "spring" %}
+{% elif art.series == "summer-season-paintings" %}{% set seasonName = "summer" %}
+{% elif art.series == "fall-season-paintings" %}{% set seasonName = "fall" %}
+{% elif art.series == "winter-season-paintings" %}{% set seasonName = "winter" %}
+{% endif %}
+{% if seasonName %}
+<script>document.body.setAttribute("data-season", "{{ seasonName }}");</script>
+{% endif %}
+
+{% set sizeText = art | sizeLabel %}
+{% set statusText = art | statusLabel %}
+{% set zoomUrl = art.image | zoomJpegUrl %}
+{% set displaySrc = art.image | fullJpegUrl %}
+
+<div class="wrap page-intro">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="{{ art.galleryPath }}">Gallery</a>
+    · {{ art.title }}
+  </nav>
+  <h1>{{ art.title }}</h1>
+</div>
+
+<div class="wrap painting-layout">
+  <div>
+    <figure class="gc-mat gc-zoom" id="painting" data-gc-zoom {% if zoomUrl %}data-zoom-src="{{ zoomUrl }}"{% endif %}>
+      {{ art.image | displayImg(art | artAlt) | safe }}
+    </figure>
+
+    <div class="gc-tools gc-noprint" role="toolbar" aria-label="Painting tools">
+      {% if art.widthIn and art.heightIn %}
+      <button type="button" class="gc-tool" data-gc-true-size-toggle aria-controls="true-size" aria-expanded="false" hidden>See it at true size</button>
+      {% endif %}
+      {% if zoomUrl %}
+      <button type="button" class="gc-tool" data-gc-zoom-toggle aria-controls="painting" aria-expanded="false" hidden>Look closely</button>
+      {% endif %}
+      <button type="button" class="gc-tool" data-gc-print>Print details</button>
+    </div>
+
+    {% if art.widthIn and art.heightIn %}
+    <section id="true-size" class="gc-ts" data-gc-true-size hidden
+      data-width-in="{{ art.widthIn }}"
+      data-height-in="{{ art.heightIn }}"
+      data-size-label="{{ sizeText }}"
+      data-src="{{ displaySrc }}"
+      data-title="{{ art.title }}"></section>
+    {% endif %}
+  </div>
+
+  <div>
+    <dl class="facts">
+      {% if art.medium %}<dt>Medium</dt><dd>{{ art.medium }}</dd>{% endif %}
+      {% if sizeText %}<dt>Size</dt><dd>{{ sizeText }}</dd>{% endif %}
+      {% if art.edition %}<dt>Edition</dt><dd>{{ art.edition }}</dd>{% endif %}
+      <dt>Status</dt>
+      <dd>
+        {% if art.status == "sold" %}
+          <span class="gc-sold">Sold</span>
+        {% else %}
+          {{ statusText }}
+        {% endif %}
+      </dd>
+    </dl>
+
+    <div id="enquire" class="gc-noprint">
+      <h2 style="font-size: 24px; margin-bottom: 12px;">Ask about this work</h2>
+      {% set paintingUrl = art.oldPath %}
+      {% set paintingTitle = art.title %}
+      {% set formId = art.slug %}
+      {% if sizeText %}
+        {% set enquirePrefill = "I’m interested in “" + art.title + "” (" + sizeText + ")." %}
+      {% else %}
+        {% set enquirePrefill = "I’m interested in “" + art.title + "”." %}
+      {% endif %}
+      {% include "enquiry-form.njk" %}
+    </div>
+
+    <p class="gc-print-only">Gene Canning · genecanning.com · Ask about this painting at genecanning.com/contact-gene.html</p>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VisualArtwork",
+  "name": {{ art.title | dump | safe }},
+  "url": {{ art.oldPath | absoluteUrl | dump | safe }},
+  "creator": { "@type": "Person", "name": "Gene Canning" }
+  {% if art.medium %},"artMedium": {{ art.medium | dump | safe }}{% endif %}
+  {% if art.widthIn %},"width": { "@type": "Distance", "name": "{{ art.widthIn }} in" }{% endif %}
+  {% if art.heightIn %},"height": { "@type": "Distance", "name": "{{ art.heightIn }} in" }{% endif %}
+  {% if art.status == "available" and art.price %}
+  ,"offers": {
+    "@type": "Offer",
+    "price": {{ art.price }},
+    "priceCurrency": "CAD",
+    "availability": "https://schema.org/InStock"
+  }
+  {% endif %}
+}
+</script>

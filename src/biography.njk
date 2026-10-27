@@ -1,0 +1,32 @@
+---
+permalink: /biography.html
+layout: base.njk
+section: about
+title: "About Gene · Gene Canning"
+description: "Biography of artist Gene Canning, painter of the natural world, based in Peterborough, Ontario."
+---
+{% set bio = pages['/biography.html'] %}
+<div class="wrap page-intro">
+  <h1>{{ bio.title or "About Gene" }}</h1>
+  <div class="prose" style="margin-bottom: 64px;">
+    {% for img in bio.images %}
+      <figure class="gc-mat" style="margin: 0 0 24px; max-width: 640px;">
+        {{ img.file | displayImg(img.alt or bio.title) | safe }}
+      </figure>
+    {% endfor %}
+    {% for p in bio.paragraphs %}
+      <p>{{ p }}</p>
+    {% endfor %}
+  </div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Gene Canning",
+  "url": "{{ site.url }}",
+  "jobTitle": "Painter",
+  "homeLocation": { "@type": "Place", "name": "Peterborough, Ontario" },
+  "email": "mailto:{{ site.email }}"
+}
+</script>

@@ -1,0 +1,40 @@
+{
+  "recognition": [
+    "Host of Journeys of an Artist on PBS",
+    "Work in Canada's permanent art collection",
+    "Featured artist, Algonquin Art Centre",
+    "Peterborough Pathway of Fame"
+  ],
+  "thomsonTeaser": {
+    "label": "The Centenary Project · 1912–1917",
+    "title": "On the Trail of Tom Thomson, 100 Years Later",
+    "body": "A multi-year journey paddling and painting in Algonquin Park — celebrating Tom Thomson as an outdoorsman, and changing Gene forever as an artist.",
+    "cta": "Read the story of the project",
+    "ctaHref": "/on-the-trail-of-tom-thomson/project-overview.html",
+    "photoCaption": "On the trail, with canoe, fly rod and paint box."
+  },
+  "paintingTeasers": [
+    {
+      "href": "/original-paintings/african-wildlife/",
+      "title": "African Wildlife",
+      "meta": "Oil, acrylic and graphite"
+    },
+    {
+      "href": "/original-paintings/north-american-wildlife/",
+      "title": "North American Wildlife",
+      "meta": "Oil and graphite"
+    },
+    {
+      "href": "/original-paintings/various-paintings/",
+      "title": "Various Paintings",
+      "meta": "Portraits, dogs, canoes, landscapes"
+    }
+  ],
+  "pbsTeaser": {
+    "label": "PBS Television Series",
+    "title": "Journeys of an Artist",
+    "body": "A 13-episode series following Gene’s work and travels. Episode 13 reviews the seasons — watch it on the PBS page.",
+    "cta": "About the series and episodes",
+    "ctaHref": "/pbs-tvs-journeys-of-an.html"
+  }
+}

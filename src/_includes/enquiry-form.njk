@@ -1,0 +1,37 @@
+<form class="gc-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks.html" data-gc-contact-form>
+  <input type="hidden" name="form-name" value="contact">
+  <p class="hp">
+    <label>Don’t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+  </p>
+  {% if paintingUrl %}
+  <input type="hidden" name="painting-url" value="{{ paintingUrl | absoluteUrl }}">
+  <input type="hidden" name="painting-title" value="{{ paintingTitle }}">
+  {% endif %}
+  <input type="hidden" name="from-path" value="{{ page.url }}">
+
+  {% set fid = formId or "main" %}
+  <div class="field">
+    <label for="contact-name-{{ fid }}">Name</label>
+    <input id="contact-name-{{ fid }}" name="name" type="text" required autocomplete="name">
+  </div>
+  <div class="field">
+    <label for="contact-email-{{ fid }}">Email</label>
+    <input id="contact-email-{{ fid }}" name="email" type="email" required autocomplete="email">
+  </div>
+  <div class="field">
+    <label for="contact-message-{{ fid }}">Message</label>
+    <textarea id="contact-message-{{ fid }}" name="message" required>{% if enquirePrefill %}{{ enquirePrefill }}{% endif %}</textarea>
+  </div>
+  <button type="submit" class="gc-btn">Send message</button>
+</form>
+<script>
+  (() => {
+    document.querySelectorAll('[data-gc-contact-form]').forEach((form) => {
+      form.addEventListener('submit', () => {
+        const from = form.querySelector('[name="from-path"]')?.value || location.pathname;
+        form.action = '/thanks.html?from=' + encodeURIComponent(from);
+      });
+    });
+  })();
+</script>
+

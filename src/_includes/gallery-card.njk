@@ -1,0 +1,23 @@
+{% set statusText = art | statusLabel %}
+{% set fullUrl = art.image | fullJpegUrl %}
+<a class="gc-card"
+   data-gc-item
+   href="{{ art.oldPath }}"
+   {% if art.status == "sold" %}data-gc-sold{% endif %}
+   data-gc-full="{{ fullUrl }}"
+   data-gc-ratio="{{ art | ratio }}"
+   data-gc-title="{{ art.title }}"
+   data-gc-meta="{{ art | metaLine }}"
+   data-gc-status="{{ statusText }}"
+   data-gc-enquire="{{ art.oldPath }}#enquire">
+  <span class="gc-mat">
+    {{ art.image | thumbImg(art | artAlt, eager) | safe }}
+  </span>
+  <span class="gc-title">{{ art.title }}</span>
+  {% if art.medium %}<span class="meta">{{ art.medium }}</span>{% endif %}
+  {% if art.status == "sold" %}
+    <span class="gc-sold">Sold</span>
+  {% elif statusText %}
+    <span class="status">{{ statusText }}</span>
+  {% endif %}
+</a>

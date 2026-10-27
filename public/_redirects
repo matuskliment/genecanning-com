@@ -1,0 +1,10 @@
+# Old iWeb site
+/GeneCanning/*  /  301
+
+# Force https + www is handled in Netlify domain settings;
+# keep a belt-and-suspenders apex path note in README.
+
+# Convenience: directory indexes without trailing slash
+/original-paintings  /original-paintings/  301
+/prints  /prints/  301
+/on-the-trail-of-tom-thomson  /on-the-trail-of-tom-thomson/  301

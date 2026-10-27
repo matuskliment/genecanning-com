@@ -1,0 +1,28 @@
+---
+layout: base.njk
+---
+<div class="wrap page-intro">
+  {% if breadcrumb %}
+  <nav class="breadcrumb" aria-label="Breadcrumb">{{ breadcrumb | safe }}</nav>
+  {% endif %}
+  <h1>{{ title }}</h1>
+  {% if seasonTabs %}
+  <nav class="season-tabs" aria-label="Tom Thomson seasons">
+    <a href="/on-the-trail-of-tom-thomson/spring-season-paintings/" {% if season == "spring" %}aria-current="page"{% endif %}>Spring</a>
+    <a href="/on-the-trail-of-tom-thomson/summer-season-paintings/" {% if season == "summer" %}aria-current="page"{% endif %}>Summer</a>
+    <a href="/on-the-trail-of-tom-thomson/fall-season-paintings/" {% if season == "fall" %}aria-current="page"{% endif %}>Fall</a>
+    <a href="/on-the-trail-of-tom-thomson/winter-season-paintings/" {% if season == "winter" %}aria-current="page"{% endif %}>Winter</a>
+    <a href="/on-the-trail-of-tom-thomson/studio-paintings/" {% if series == "studio-paintings" %}aria-current="page"{% endif %}>Studio</a>
+    <a href="/on-the-trail-of-tom-thomson/photos-from-the-trail/" {% if series == "photos-from-the-trail" %}aria-current="page"{% endif %}>Photos</a>
+    <a href="/on-the-trail-of-tom-thomson/videos-from-the-trail/" {% if series == "videos-from-the-trail" %}aria-current="page"{% endif %}>Videos</a>
+  </nav>
+  {% endif %}
+  {% if intro and intro.length %}
+  <div class="prose lede">
+    {% for p in intro %}
+    <p>{{ p }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{{ content | safe }}

@@ -1,0 +1,23 @@
+---
+permalink: /thanks.html
+layout: base.njk
+section: contact
+title: "Message sent · Gene Canning"
+description: "Your message reached Gene Canning."
+---
+<div class="wrap page-intro prose">
+  <h1>Thank you</h1>
+  <p>Your message reached Gene. He’ll get back to you by email.</p>
+  <p><a href="/" id="back-link">Back to the home page</a></p>
+</div>
+<script>
+  (() => {
+    const params = new URLSearchParams(location.search);
+    const from = params.get('from');
+    const link = document.getElementById('back-link');
+    if (from && from.startsWith('/') && !from.startsWith('//')) {
+      link.href = from;
+      link.textContent = 'Back to where you were';
+    }
+  })();
+</script>

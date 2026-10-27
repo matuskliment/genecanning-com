@@ -1,0 +1,26 @@
+---
+permalink: /contact-gene.html
+layout: base.njk
+section: contact
+title: "Contact Gene · Gene Canning"
+eleventyComputed:
+  description: "Send Gene Canning a message about paintings, prints, or his Tom Thomson project."
+---
+{% set contactPage = pages['/contact-gene.html'] %}
+<div class="wrap page-intro">
+  <h1>Contact Gene</h1>
+  <div class="prose lede">
+    {% for p in contactPage.paragraphs %}
+      {% if "Name" not in p and "Email" not in p and "Subject" not in p and "Message" not in p and "Send" not in p %}
+        <p>{{ p }}</p>
+      {% endif %}
+    {% endfor %}
+    <p>Prefer email? Write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+  </div>
+  <div style="max-width: 520px; margin: 32px 0 64px;">
+    {% set paintingUrl = null %}
+    {% set paintingTitle = null %}
+    {% set enquirePrefill = null %}
+    {% include "enquiry-form.njk" %}
+  </div>
+</div>

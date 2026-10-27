@@ -1,0 +1,28 @@
+---
+permalink: /pbs-tvs-journeys-of-an.html
+layout: base.njk
+section: pbs
+title: "PBS Series · Journeys of an Artist · Gene Canning"
+---
+{% set pbs = pages['/pbs-tvs-journeys-of-an.html'] %}
+<div class="wrap page-intro">
+  <p class="label">PBS Television Series</p>
+  <h1>{{ pbs.title or "Journeys of an Artist" }}</h1>
+  <div class="prose" style="margin-bottom: 48px;">
+    {% for p in pbs.paragraphs %}
+      <p>{{ p }}</p>
+    {% endfor %}
+  </div>
+  {% for v in pbs.videos %}
+    <div class="video-embed gc-mat" style="padding: 0; margin-bottom: 32px; max-width: 900px;">
+      <div class="video-embed">
+        <iframe src="{{ v }}" title="Journeys of an Artist video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  {% endfor %}
+  {% for img in pbs.images %}
+    <figure class="gc-mat" style="margin: 0 0 24px; max-width: 640px;">
+      {{ img.file | displayImg(img.alt or "PBS series") | safe }}
+    </figure>
+  {% endfor %}
+</div>

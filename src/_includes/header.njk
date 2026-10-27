@@ -1,0 +1,35 @@
+{% set path = page.url or "" %}
+{% set navPaintings = path.indexOf("/original-paintings") == 0 %}
+{% set navThomson = path.indexOf("/on-the-trail-of-tom-thomson") == 0 %}
+{% set navPrints = path.indexOf("/prints") == 0 %}
+{% set navPbs = path.indexOf("pbs-tvs") >= 0 %}
+{% set navAbout = path.indexOf("biography") >= 0 %}
+{% set navContact = path.indexOf("contact-gene") >= 0 or path.indexOf("thanks") >= 0 %}
+<header class="gc-header">
+  <div class="wrap">
+    <a class="gc-sig" href="/">
+      {% include "signature.svg" %}
+      <span class="tagline">{{ site.tagline }}</span>
+    </a>
+    <button type="button" class="gc-nav-toggle" aria-expanded="false" aria-controls="site-nav" data-gc-nav-toggle>Menu</button>
+    <nav id="site-nav" class="gc-nav" aria-label="Main">
+      <a href="/original-paintings/" {% if navPaintings %}aria-current="page"{% endif %}>Paintings</a>
+      <a href="/on-the-trail-of-tom-thomson/" {% if navThomson %}aria-current="page"{% endif %}>Tom Thomson Project</a>
+      <a href="/prints/" {% if navPrints %}aria-current="page"{% endif %}>Prints</a>
+      <a href="/pbs-tvs-journeys-of-an.html" {% if navPbs %}aria-current="page"{% endif %}>PBS Series</a>
+      <a href="/biography.html" {% if navAbout %}aria-current="page"{% endif %}>About Gene</a>
+      <a href="/contact-gene.html" {% if navContact %}aria-current="page"{% endif %}>Contact</a>
+    </nav>
+  </div>
+</header>
+<script>
+  (() => {
+    const btn = document.querySelector('[data-gc-nav-toggle]');
+    const nav = document.getElementById('site-nav');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>

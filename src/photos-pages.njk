@@ -1,0 +1,24 @@
+---
+pagination:
+  data: photos
+  size: 1
+  alias: art
+permalink: "{{ art.oldPath }}"
+layout: base.njk
+section: thomson
+eleventyComputed:
+  title: "{{ art.title }} · Photos from the Trail · Gene Canning"
+  description: "{{ art.title }} — photo from Gene Canning’s Tom Thomson project."
+---
+<div class="wrap page-intro">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/on-the-trail-of-tom-thomson/photos-from-the-trail/">Photos from the Trail</a>
+    · {{ art.title }}
+  </nav>
+  <h1>{{ art.title }}</h1>
+</div>
+<div class="wrap" style="max-width: 960px; margin-bottom: 64px;">
+  <figure class="gc-mat">
+    {{ art.image | displayImg(art.title) | safe }}
+  </figure>
+</div>

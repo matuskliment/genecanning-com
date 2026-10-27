@@ -1,0 +1,54 @@
+{
+  "paintings": [
+    {
+      "label": "African Wildlife",
+      "href": "/original-paintings/african-wildlife/"
+    },
+    {
+      "label": "North American Wildlife",
+      "href": "/original-paintings/north-american-wildlife/"
+    },
+    {
+      "label": "Various Paintings",
+      "href": "/original-paintings/various-paintings/"
+    }
+  ],
+  "thomson": [
+    {
+      "label": "Project Overview",
+      "href": "/on-the-trail-of-tom-thomson/project-overview.html"
+    },
+    {
+      "label": "Spring",
+      "href": "/on-the-trail-of-tom-thomson/spring-season-paintings/",
+      "season": "spring"
+    },
+    {
+      "label": "Summer",
+      "href": "/on-the-trail-of-tom-thomson/summer-season-paintings/",
+      "season": "summer"
+    },
+    {
+      "label": "Fall",
+      "href": "/on-the-trail-of-tom-thomson/fall-season-paintings/",
+      "season": "fall"
+    },
+    {
+      "label": "Winter",
+      "href": "/on-the-trail-of-tom-thomson/winter-season-paintings/",
+      "season": "winter"
+    },
+    {
+      "label": "Studio paintings",
+      "href": "/on-the-trail-of-tom-thomson/studio-paintings/"
+    },
+    {
+      "label": "Photos from the Trail",
+      "href": "/on-the-trail-of-tom-thomson/photos-from-the-trail/"
+    },
+    {
+      "label": "Videos from the Trail",
+      "href": "/on-the-trail-of-tom-thomson/videos-from-the-trail/"
+    }
+  ]
+}

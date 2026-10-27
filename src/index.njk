@@ -1,0 +1,90 @@
+---
+permalink: /
+layout: base.njk
+section: home
+eleventyComputed:
+  title: "Welcome · Artist Gene Canning, Painter of the natural world"
+  description: "Hello, I am Gene Canning. Welcome to my website. Painter of the natural world — wildlife, landscapes, and On the Trail of Tom Thomson."
+---
+{% set home = pages['/index.html'] %}
+{% set heroSrc = siteImages.homeHero %}
+
+<div class="wrap">
+  <section class="home-hero">
+    <figure>
+      <div class="gc-mat">
+        {{ heroSrc | displayImg(siteImages.homeHeroCaption or "Gene painting in winter") | safe }}
+      </div>
+      <figcaption class="caption">{{ siteImages.homeHeroCaption }}</figcaption>
+    </figure>
+    <div class="prose">
+      <h1>Hello, I am Gene Canning…</h1>
+      {% for p in home.paragraphs %}
+        {% if loop.index0 > 0 and p != "Gene Canning" and loop.index0 < 8 %}
+          <p>{{ p }}</p>
+        {% endif %}
+      {% endfor %}
+      <p><em>Enjoy the journey with me. — Gene</em></p>
+    </div>
+  </section>
+
+  <div class="recognition" role="list">
+    {% for item in homepage.recognition %}
+      <span role="listitem">{{ item }}</span>
+    {% endfor %}
+  </div>
+
+  <section class="home-section home-section--flip">
+    <div>
+      <div class="gc-mat">
+        {{ siteImages.thomsonTeaser | displayImg(siteImages.thomsonTeaserAlt) | safe }}
+      </div>
+      <p class="caption">{{ homepage.thomsonTeaser.photoCaption }}</p>
+    </div>
+    <div class="home-section__text prose">
+      <p class="label">{{ homepage.thomsonTeaser.label }}</p>
+      <h2>{{ homepage.thomsonTeaser.title }}</h2>
+      <p>{{ homepage.thomsonTeaser.body }}</p>
+      <div class="inline-links">
+        <a href="/on-the-trail-of-tom-thomson/spring-season-paintings/">Spring</a>
+        <a href="/on-the-trail-of-tom-thomson/summer-season-paintings/">Summer</a>
+        <a href="/on-the-trail-of-tom-thomson/fall-season-paintings/">Fall</a>
+        <a href="/on-the-trail-of-tom-thomson/winter-season-paintings/">Winter</a>
+        <a href="/on-the-trail-of-tom-thomson/studio-paintings/">Studio paintings</a>
+        <a href="/on-the-trail-of-tom-thomson/photos-from-the-trail/">Photos and videos</a>
+      </div>
+      <a class="gc-btn" href="{{ homepage.thomsonTeaser.ctaHref }}">{{ homepage.thomsonTeaser.cta }}</a>
+    </div>
+  </section>
+
+  <section class="home-section" style="grid-template-columns: 1fr; border-top: 1px solid var(--gc-birch);">
+    <div>
+      <h2>Original paintings</h2>
+      <div class="teaser-grid">
+        {% for t in homepage.paintingTeasers %}
+          {% set seriesArts = artworks | bySeries(t.href.split('/')[2]) %}
+          {% set cover = seriesArts[0] %}
+          <a class="teaser-card" href="{{ t.href }}">
+            {% if cover %}
+              <span class="gc-mat">{{ cover.image | thumbImg(t.title, loop.first) | safe }}</span>
+            {% endif %}
+            <span class="gc-title">{{ t.title }}</span>
+            <span class="meta">{{ t.meta }}</span>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="gc-mat" style="background: var(--gc-lake); min-height: 220px; display:flex; align-items:center; justify-content:center;">
+      <a class="gc-btn gc-btn--light" href="{{ homepage.pbsTeaser.ctaHref }}">Watch on the PBS page</a>
+    </div>
+    <div class="home-section__text prose">
+      <p class="label">{{ homepage.pbsTeaser.label }}</p>
+      <h2>{{ homepage.pbsTeaser.title }}</h2>
+      <p>{{ homepage.pbsTeaser.body }}</p>
+      <p><a href="{{ homepage.pbsTeaser.ctaHref }}">{{ homepage.pbsTeaser.cta }}</a></p>
+    </div>
+  </section>
+</div>

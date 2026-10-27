@@ -1,0 +1,21 @@
+---
+permalink: /on-the-trail-of-tom-thomson/project-overview.html
+layout: base.njk
+section: thomson
+title: "Project Overview · On the Trail of Tom Thomson · Gene Canning"
+---
+{% set pageData = pages['/on-the-trail-of-tom-thomson/project-overview.html'] %}
+<div class="wrap page-intro">
+  <nav class="breadcrumb"><a href="/on-the-trail-of-tom-thomson/">Tom Thomson Project</a></nav>
+  <h1>{{ pageData.title or "Project Overview" }}</h1>
+  <div class="prose" style="margin-bottom: 64px;">
+    {% for img in pageData.images %}
+      <figure class="gc-mat" style="margin: 0 0 24px; max-width: 720px;">
+        {{ img.file | displayImg(img.alt or pageData.title) | safe }}
+      </figure>
+    {% endfor %}
+    {% for p in pageData.paragraphs %}
+      <p>{{ p }}</p>
+    {% endfor %}
+  </div>
+</div>

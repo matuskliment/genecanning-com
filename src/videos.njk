@@ -1,0 +1,29 @@
+---
+permalink: /on-the-trail-of-tom-thomson/videos-from-the-trail/index.html
+layout: base.njk
+section: thomson
+title: "Videos from the Trail · Gene Canning"
+---
+{% set pageData = pages['/on-the-trail-of-tom-thomson/videos-from-the-trail/index.html'] %}
+<div class="wrap page-intro">
+  <nav class="season-tabs" aria-label="Tom Thomson seasons">
+    <a href="/on-the-trail-of-tom-thomson/spring-season-paintings/">Spring</a>
+    <a href="/on-the-trail-of-tom-thomson/summer-season-paintings/">Summer</a>
+    <a href="/on-the-trail-of-tom-thomson/fall-season-paintings/">Fall</a>
+    <a href="/on-the-trail-of-tom-thomson/winter-season-paintings/">Winter</a>
+    <a href="/on-the-trail-of-tom-thomson/studio-paintings/">Studio</a>
+    <a href="/on-the-trail-of-tom-thomson/photos-from-the-trail/">Photos</a>
+    <a href="/on-the-trail-of-tom-thomson/videos-from-the-trail/" aria-current="page">Videos</a>
+  </nav>
+  <h1>{{ pageData.title or "Videos from the Trail" }}</h1>
+  <div class="prose">
+    {% for p in pageData.paragraphs %}<p>{{ p }}</p>{% endfor %}
+  </div>
+  {% for v in pageData.videos %}
+    <div class="gc-mat" style="padding: 0; margin: 24px 0 48px; max-width: 900px;">
+      <div class="video-embed">
+        <iframe src="{{ v }}" title="Video from the Trail" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  {% endfor %}
+</div>
