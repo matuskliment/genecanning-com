@@ -49,6 +49,14 @@ if (fs.existsSync(OUT)) {
   }
 }
 
+// Netlify builds already ship palettes.json — resampling every painting burns the clock.
+if (process.env.NETLIFY && Object.keys(existingFlat).length > 50) {
+  console.log(
+    `palettes: using committed palettes.json (${Object.keys(existingFlat).length} entries)`
+  );
+  process.exit(0);
+}
+
 const flat = { ...existingFlat };
 let computed = 0;
 let reused = 0;

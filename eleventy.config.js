@@ -6,6 +6,18 @@ import markdownIt from "markdown-it";
 const SITE_URL = "https://www.genecanning.com";
 const MIRROR = "/Users/matuskliment/www.genecanning.com";
 
+/** Netlify cold builds time out if we encode AVIF + 2400/4000px for every painting. */
+const ON_NETLIFY = Boolean(process.env.NETLIFY);
+const RESPONSIVE_FORMATS = ON_NETLIFY
+  ? ["webp", "jpeg"]
+  : ["avif", "webp", "jpeg"];
+const DISPLAY_WIDTHS = ON_NETLIFY ? [1200, 1800] : [1200, 1800, 2400];
+const DEFAULT_WIDTHS = ON_NETLIFY
+  ? [400, 800, 1200, 1800]
+  : [400, 800, 1200, 1800, 2400];
+const ZOOM_WIDTH = ON_NETLIFY ? 2400 : 4000;
+const THUMB_WIDTHS = ON_NETLIFY ? [400, 800] : [24, 400, 800];
+
 /** Resolve best source image path under mirror _Media or img-source */
 export function resolveImageSource(filename) {
   if (!filename) return null;
@@ -156,7 +168,7 @@ export default async function (eleventyConfig) {
     try {
       const metadata = await Image(source, {
         widths: [400, 800],
-        formats: ["avif", "webp", "jpeg"],
+        formats: RESPONSIVE_FORMATS,
         outputDir: "_site/img",
         urlPath: "/img/",
       });
@@ -248,7 +260,7 @@ export default async function (eleventyConfig) {
       if (source) {
         try {
           const fullMeta = await Image(source, {
-            widths: [1200, 1800, 2400],
+            widths: DISPLAY_WIDTHS,
             formats: ["jpeg"],
             outputDir: "_site/img",
             urlPath: "/img/",
@@ -466,10 +478,10 @@ export default async function (eleventyConfig) {
       if (!source) {
         return `<img alt="${alt || ""}" width="400" height="300" ${attrs}>`;
       }
-      const w = widths || [400, 800, 1200, 1800, 2400];
+      const w = widths || DEFAULT_WIDTHS;
       const metadata = await Image(source, {
         widths: w,
-        formats: ["avif", "webp", "jpeg"],
+        formats: RESPONSIVE_FORMATS,
         outputDir: "_site/img",
         urlPath: "/img/",
         sharpOptions: { sequentialRead: true },
@@ -491,10 +503,10 @@ export default async function (eleventyConfig) {
       try {
         const source = resolveImageSource(src);
         if (!source) return callback(null, null);
-        const w = widths || [400, 800, 1200, 1800, 2400];
+        const w = widths || DEFAULT_WIDTHS;
         const metadata = await Image(source, {
           widths: w,
-          formats: ["avif", "webp", "jpeg"],
+          formats: RESPONSIVE_FORMATS,
           outputDir: "_site/img",
           urlPath: "/img/",
         });
@@ -517,8 +529,8 @@ export default async function (eleventyConfig) {
           );
         }
         const metadata = await Image(source, {
-          widths: [24, 400, 800],
-          formats: ["avif", "webp", "jpeg"],
+          widths: THUMB_WIDTHS,
+          formats: RESPONSIVE_FORMATS,
           outputDir: "_site/img",
           urlPath: "/img/",
         });
@@ -559,8 +571,8 @@ export default async function (eleventyConfig) {
           );
         }
         const metadata = await Image(source, {
-          widths: [1200, 1800, 2400],
-          formats: ["avif", "webp", "jpeg"],
+          widths: DISPLAY_WIDTHS,
+          formats: RESPONSIVE_FORMATS,
           outputDir: "_site/img",
           urlPath: "/img/",
         });
@@ -610,7 +622,7 @@ export default async function (eleventyConfig) {
         const source = resolveImageSource(src);
         if (!source) return callback(null, "");
         const metadata = await Image(source, {
-          widths: [4000],
+          widths: [ZOOM_WIDTH],
           formats: ["jpeg"],
           outputDir: "_site/img",
           urlPath: "/img/",
