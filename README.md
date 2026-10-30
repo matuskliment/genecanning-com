@@ -33,8 +33,9 @@ Mirror path used by the extract script: `/Users/matuskliment/www.genecanning.com
 - Narrative copy extracted to `src/_data/pages.json` (and Markdown snapshots in `src/content/`)
 - Caption parse flags for review: `src/_data/parseWarnings.json`
 - Homepage Recognition strip + teasers: `src/_data/homepage.json`
+- Painting/photo originals for the build: `img-source/` (required on Netlify; Eleventy reads these before the local Sandvox mirror)
 
-Re-run `npm run extract` after updating the mirror, then spot-check warnings.
+Re-run `npm run extract` after updating the mirror, then spot-check warnings. When new artworks are added, copy their source JPEGs into `img-source/` and commit them so Netlify builds keep working.
 
 ## Motion kit
 
