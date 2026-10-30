@@ -82,9 +82,14 @@ summary:focus-visible {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  padding-left: max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
 }
-@media (max-width: 480px) {
-  .wrap { padding: 0 16px; }
+@media (max-width: 900px) {
+  .wrap {
+    padding-left: max(22px, env(safe-area-inset-left, 0px));
+    padding-right: max(22px, env(safe-area-inset-right, 0px));
+  }
 }
 .prose { max-width: 68ch; }
 .prose a { text-decoration: underline; }
@@ -180,9 +185,20 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   }
   .gc-sig .gc-sig-svg { height: 44px; }
   .gc-nav-toggle { display: inline-flex; align-items: center; }
-  .gc-nav { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 0; }
+  .gc-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-top: 8px;
+  }
   .gc-nav.is-open { display: flex; }
-  .gc-nav a { width: 100%; border-bottom: 1px solid var(--gc-birch); }
+  .gc-nav a {
+    width: auto;
+    border-bottom: 1px solid var(--gc-birch);
+    padding-inline: 0;
+  }
 }
 
 /* Buttons */
@@ -411,29 +427,12 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
 }
 @media (max-width: 700px) {
   .season-tabs {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 0;
-    padding-bottom: 0;
+    gap: 4px 18px;
+    padding-bottom: 16px;
   }
-  .season-tabs a {
-    width: 100%;
-    min-height: 48px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--gc-birch);
-  }
-  .season-tabs a:last-child { border-bottom: 0; }
   .inline-links {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 0;
+    gap: 4px 18px;
   }
-  .inline-links a {
-    width: 100%;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--gc-birch);
-  }
-  .inline-links a:last-child { border-bottom: 0; }
 }
 
 /* Homepage */
@@ -568,7 +567,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
 @media (max-width: 480px) {
   .gc-footer { margin-top: 64px; padding-top: 32px; }
   .gc-footer .wrap { flex-direction: column; align-items: flex-start; }
-  .gc-footer .gc-btn { width: 100%; }
+  .gc-footer .gc-btn { width: auto; max-width: 100%; }
 }
 .gc-footer a.sig-text {
   color: var(--gc-gesso);
@@ -586,6 +585,12 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
 .page-intro { padding: 40px 0 8px; }
 @media (max-width: 700px) {
   .page-intro { padding: 24px 0 8px; }
+  .page-intro .lede {
+    font-size: 18px;
+    max-width: 36em;
+  }
+  .teaser-card .gc-title { font-size: 20px; }
+  .gc-mat { padding: 14px; }
 }
 .page-intro .lede {
   font-size: 19px;
@@ -854,24 +859,33 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   }
   .trailhead-title br { display: none; }
   .trailhead-tabs {
-    margin-top: 28px;
-    padding-bottom: 8px;
+    margin-top: 24px;
+    padding-bottom: 20px;
     gap: 10px;
   }
   .trailhead-tabs-links {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 0;
+    gap: 4px 18px;
   }
   .trailhead-tabs a {
-    width: 100%;
-    min-height: 48px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--gc-birch);
+    min-height: 44px;
+    padding: 8px 0;
   }
-  .trailhead-tabs a:last-child { border-bottom: 0; }
-  .trailhead-intro { margin-top: 32px; gap: 32px; }
-  .trailhead-note { margin-top: 0; }
+  .trailhead-intro { margin-top: 28px; gap: 28px; }
+  .trailhead-note {
+    margin-top: 0;
+    flex: 1 1 auto;
+    max-width: none;
+    padding: 22px 20px;
+  }
+  .trailhead-note .gc-btn {
+    align-self: flex-start;
+    width: auto;
+    max-width: 100%;
+  }
+  .trailhead-ledger {
+    flex: 1 1 auto;
+    width: 100%;
+  }
   .trailhead-season-grid { grid-template-columns: 1fr; gap: 24px; }
   .trailhead-continue-row {
     grid-template-columns: 100px 1fr;

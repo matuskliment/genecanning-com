@@ -172,7 +172,13 @@ body { background: var(--gc-ground); }
     flex: 1 1 100%;
     max-width: none;
     margin-top: 24px;
-    padding: 24px 20px;
+    padding: 22px 20px;
+  }
+  .gc-letter .gc-btn,
+  .gc-letter a.gc-btn {
+    align-self: flex-start;
+    width: auto;
+    max-width: 100%;
   }
   .gc-recognition {
     flex: 1 1 100%;
