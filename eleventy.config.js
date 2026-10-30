@@ -1,7 +1,27 @@
 import path from "node:path";
 import fs from "node:fs";
+import crypto from "node:crypto";
 import Image from "@11ty/eleventy-img";
 import markdownIt from "markdown-it";
+
+/** Bust long-lived /assets caches when CSS/JS change (Netlify uses immutable). */
+function assetVersion() {
+  const root = path.join(process.cwd(), "src", "assets");
+  const hash = crypto.createHash("sha1");
+  const walk = (dir) => {
+    for (const name of fs.readdirSync(dir).sort()) {
+      const full = path.join(dir, name);
+      const st = fs.statSync(full);
+      if (st.isDirectory()) walk(full);
+      else if (/\.(css|js)$/.test(name)) {
+        hash.update(full);
+        hash.update(fs.readFileSync(full));
+      }
+    }
+  };
+  walk(root);
+  return hash.digest("hex").slice(0, 10);
+}
 
 const SITE_URL = "https://www.genecanning.com";
 const MIRROR = "/Users/matuskliment/www.genecanning.com";
@@ -50,6 +70,7 @@ export default async function (eleventyConfig) {
     email: "genecanning@hotmail.com",
     location: "Peterborough, Ontario",
     year: new Date().getFullYear(),
+    assetVersion: assetVersion(),
   });
 
   const md = markdownIt({ html: true, breaks: false, linkify: true });
