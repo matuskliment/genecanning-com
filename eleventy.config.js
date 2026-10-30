@@ -335,7 +335,7 @@ export default async function (eleventyConfig) {
       if (source) {
         try {
           const metadata = await Image(source, {
-            widths: [800],
+            widths: [1200],
             formats: ["jpeg"],
             outputDir: "_site/img",
             urlPath: "/img/",
@@ -352,7 +352,7 @@ export default async function (eleventyConfig) {
       }
       if (!url) return "";
       const alt = escapeAttr(artAlt(art));
-      return `<div class="gc-hero-painting" hidden style="--x: 65%; --y: 15%; --w: 26%; --caption-y: 61%">
+      return `<div class="gc-hero-painting" hidden>
         <img data-src="${escapeAttr(url)}" width="${w}" height="${h}" alt="${alt}">
         <p class="gc-hero-caption"><a href="${escapeAttr(art.oldPath)}">${escapeAttr(art.title)}</a> · painted here</p>
       </div>`;
@@ -384,7 +384,7 @@ export default async function (eleventyConfig) {
         if (!source) continue;
         try {
           const metadata = await Image(source, {
-            widths: [800],
+            widths: [1200],
             formats: ["jpeg"],
             outputDir: "_site/img",
             urlPath: "/img/",
@@ -432,7 +432,7 @@ export default async function (eleventyConfig) {
         if (!source) continue;
         try {
           const metadata = await Image(source, {
-            widths: [800],
+            widths: [1200],
             formats: ["jpeg"],
             outputDir: "_site/img",
             urlPath: "/img/",

@@ -85,13 +85,16 @@ body { background: var(--gc-ground); }
 .gc-hero-frame--home { aspect-ratio: 2 / 1; }
 .gc-hero-photo { display: block; width: 100%; height: 100%; object-fit: cover; }
 .gc-hero-photo, .gc-hero-painting { transition: opacity 450ms ease; }
-.gc-hero-painting { position: absolute; inset: 0; background: #E7E0D2; opacity: 0; }
+.gc-hero-painting {
+  position: absolute; inset: 0; background: #E7E0D2; opacity: 0;
+  --x: 52%; --y: 9%; --w: 40%; --caption-y: 74%;
+}
 .gc-hero-painting > img {
-  position: absolute; left: var(--x, 65%); top: var(--y, 15%); width: var(--w, 26%); height: auto;
+  position: absolute; left: var(--x); top: var(--y); width: var(--w); height: auto;
   box-shadow: 0 14px 30px rgba(30, 36, 32, .28), 0 3px 6px rgba(30, 36, 32, .2); background: #B7A98E;
 }
 .gc-hero-caption {
-  position: absolute; left: var(--x, 65%); top: var(--caption-y, 61%); margin: 0;
+  position: absolute; left: var(--x); top: var(--caption-y); margin: 0;
   font: 15px/1.3 var(--gc-sans); color: var(--gc-lichen);
 }
 .gc-hero-caption a { color: var(--gc-spruce); }
@@ -146,10 +149,6 @@ body { background: var(--gc-ground); }
 @media (max-width: 700px) {
   .gc-hero-frame--home {
     aspect-ratio: 4 / 3;
-    width: 100vw;
-    max-width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
   }
   .gc-hero-title {
     position: static;
@@ -166,6 +165,7 @@ body { background: var(--gc-ground); }
     font-size: 15px;
     padding: 0 12px;
   }
+  .gc-hero-painting { --x: 16%; --y: 11%; --w: 68%; }
   .gc-hero-caption { display: none; }
   .gc-intro-row { gap: 28px; }
   .gc-letter {

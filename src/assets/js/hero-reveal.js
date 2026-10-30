@@ -11,7 +11,7 @@
  *   <div class="gc-hero" data-gc-hero …>
  *     <figure class="gc-hero-frame" style="aspect-ratio: 2 / 1">
  *       <img class="gc-hero-photo" …>
- *       <div class="gc-hero-painting" hidden style="--x: 65%; --y: 15%; --w: 26%">
+ *       <div class="gc-hero-painting" hidden>
  *         <img data-src="…" width="…" height="…" alt="…">
  *         <p class="gc-hero-caption"><a href="…">[Title]</a> · painted here</p>
  *       </div>

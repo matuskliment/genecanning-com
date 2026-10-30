@@ -49,6 +49,7 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  overflow-x: clip;
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -60,6 +61,7 @@ body {
   font: 400 19px/1.65 var(--gc-serif);
   background: var(--gc-ground);
   -webkit-tap-highlight-color: rgba(45, 75, 78, 0.18);
+  overflow-x: clip;
 }
 @media (max-width: 900px) {
   body { font-size: 18px; }
@@ -407,6 +409,32 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   text-underline-offset: 6px;
   text-decoration-thickness: 2px;
 }
+@media (max-width: 700px) {
+  .season-tabs {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    padding-bottom: 0;
+  }
+  .season-tabs a {
+    width: 100%;
+    min-height: 48px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gc-birch);
+  }
+  .season-tabs a:last-child { border-bottom: 0; }
+  .inline-links {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+  .inline-links a {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gc-birch);
+  }
+  .inline-links a:last-child { border-bottom: 0; }
+}
 
 /* Homepage */
 .home-hero {
@@ -568,9 +596,9 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
 /* Thomson Trailhead hub */
 .trailhead { padding: 32px 0 8px; }
 .trailhead-hero { margin-bottom: 8px; }
-.trailhead-hero-frame { aspect-ratio: 21 / 9; }
+.trailhead-hero-frame { aspect-ratio: 2 / 1; }
 .trailhead-hero-frame .gc-hero-photo {
-  object-position: var(--hero-pos, 50% 40%);
+  object-position: var(--hero-pos, 50% 42%);
 }
 .trailhead-hero-copy {
   position: absolute;
@@ -807,23 +835,41 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
 
 @media (max-width: 700px) {
   .trailhead { padding-top: 20px; }
-  .trailhead-hero-frame { aspect-ratio: 16 / 10; }
+  .trailhead-hero-frame {
+    aspect-ratio: 4 / 3;
+  }
   .trailhead-hero-copy {
     position: static;
     max-width: none;
-    margin-top: 16px;
+    margin-top: 20px;
   }
   .trailhead-label {
     color: var(--gc-lichen);
     text-shadow: none;
   }
   .trailhead-title {
-    font-size: 32px;
+    font-size: clamp(28px, 8vw, 34px);
     color: var(--gc-lake);
     text-shadow: none;
   }
   .trailhead-title br { display: none; }
-  .trailhead-tabs { margin-top: 28px; padding-bottom: 24px; }
+  .trailhead-tabs {
+    margin-top: 28px;
+    padding-bottom: 8px;
+    gap: 10px;
+  }
+  .trailhead-tabs-links {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+  .trailhead-tabs a {
+    width: 100%;
+    min-height: 48px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gc-birch);
+  }
+  .trailhead-tabs a:last-child { border-bottom: 0; }
   .trailhead-intro { margin-top: 32px; gap: 32px; }
   .trailhead-note { margin-top: 0; }
   .trailhead-season-grid { grid-template-columns: 1fr; gap: 24px; }

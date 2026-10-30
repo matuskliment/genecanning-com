@@ -7,3 +7,6 @@ _site/
 img/.cache/
 *.log
 .env
+
+# Local Netlify folder
+.netlify
