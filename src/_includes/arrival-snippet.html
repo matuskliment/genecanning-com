@@ -1,0 +1,18 @@
+<!--
+  Homepage signature arrival — paste into the homepage <head> ONLY, before the stylesheet.
+  Adds .gc-arrive on a first visit (none in the last 30 days) when the visitor
+  hasn't asked for reduced motion. That class only drives the header signature
+  writing; other homepage entrance motion uses .gc-enter on every visit.
+  Force a signature replay while testing: open /?arrive=1
+-->
+<script>
+try{
+  var k='gc-arrived', force=/(?:^|[?&])arrive=1(?:&|$)/.test(location.search);
+  if(force) localStorage.removeItem(k);
+  var t=+localStorage.getItem(k)||0;
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&(force||Date.now()-t>2592e6)){
+    document.documentElement.classList.add('gc-arrive');
+    if(!force) localStorage.setItem(k,Date.now());
+  }
+}catch(e){}
+</script>

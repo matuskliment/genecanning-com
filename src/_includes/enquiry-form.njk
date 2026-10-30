@@ -20,7 +20,7 @@
   </div>
   <div class="field">
     <label for="contact-message-{{ fid }}">Message</label>
-    <textarea id="contact-message-{{ fid }}" name="message" required>{% if enquirePrefill %}{{ enquirePrefill }}{% endif %}</textarea>
+    <textarea id="contact-message-{{ fid }}" name="message" required enterkeyhint="send">{% if enquirePrefill %}{{ enquirePrefill }}{% endif %}</textarea>
   </div>
   <button type="submit" class="gc-btn">Send message</button>
 </form>

@@ -12,12 +12,16 @@ title: "Original Paintings · Gene Canning"
   </div>
   <div class="teaser-grid" style="margin: 40px 0 64px;">
     {% for t in homepage.paintingTeasers %}
-      {% set seriesArts = artworks | bySeries(t.href.split('/')[2]) %}
-      {% set cover = seriesArts[0] %}
+      {% set cover = artworks | findBySlug(t.coverSlug) %}
+      {% if not cover %}
+        {% set cover = (artworks | bySeries(t.href.split('/')[2]))[0] %}
+      {% endif %}
       <a class="teaser-card" href="{{ t.href }}">
-        {% if cover %}
-          <span class="gc-mat">{{ cover.image | thumbImg(t.title, loop.first) | safe }}</span>
-        {% endif %}
+        <span class="gc-mat teaser-mat">
+          {% if cover %}
+            {{ cover.image | thumbImg(t.title, loop.first) | safe }}
+          {% endif %}
+        </span>
         <span class="gc-title">{{ t.title }}</span>
         <span class="meta">{{ t.meta }}</span>
       </a>

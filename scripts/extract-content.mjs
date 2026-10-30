@@ -187,6 +187,16 @@ function parseCaption(captionOriginal, seriesKey) {
   return result;
 }
 
+/** oil / acrylic / graphite from medium text; empty when caption does not say */
+function mediumKeyFrom(medium) {
+  if (!medium) return "";
+  const m = String(medium).toLowerCase();
+  if (/\boil\b/.test(m)) return "oil";
+  if (/\bacrylic\b/.test(m)) return "acrylic";
+  if (/\bgraphite\b/.test(m)) return "graphite";
+  return "";
+}
+
 function findBestImage(thumbSrc, detailHtml) {
   // Collect candidate basenames from detail page full-size link and media refs
   const names = new Set();
@@ -298,22 +308,15 @@ function narrativeToMarkdown($, pagePath) {
     : main.find(".article-content").first().length
       ? main.find(".article-content").first()
       : main;
-  paraRoot.find("p.Body, p.paragraph_style_1").each((_, p) => {
+  // Sandvox pages mix .Body with Word-pasted .MsoNormal (biography is almost all MsoNormal)
+  paraRoot.find("p.Body, p.MsoNormal, p.paragraph_style_1, p").each((_, p) => {
     const t = cleanText($(p).text());
-    if (t && t !== "[Back To Top]" && !seen.has(t)) {
-      seen.add(t);
-      parts.push(t);
-    }
+    if (!t || t === "[Back To Top]" || seen.has(t)) return;
+    // Skip empty / whitespace-only / lone nbsp leftovers
+    if (t.length < 2) return;
+    seen.add(t);
+    parts.push(t);
   });
-  if (!parts.length) {
-    paraRoot.find("p").each((_, p) => {
-      const t = cleanText($(p).text());
-      if (t && t !== "[Back To Top]" && !seen.has(t)) {
-        seen.add(t);
-        parts.push(t);
-      }
-    });
-  }
 
   // Images in narrative — keep as markdown image refs to media filenames
   const images = [];
@@ -422,7 +425,7 @@ for (const file of htmlFiles) {
               medium: "",
               widthIn: null,
               heightIn: null,
-              status: "available",
+              status: "",
               price: null,
               edition: "",
               captionOriginal: decodeEntities(caption),
@@ -449,6 +452,7 @@ for (const file of htmlFiles) {
         galleryPath: oldPath,
         title: parsed.title,
         medium: parsed.medium,
+        mediumKey: kind === "photo" ? "" : mediumKeyFrom(parsed.medium),
         widthIn: parsed.widthIn,
         heightIn: parsed.heightIn,
         status: parsed.status,
@@ -524,47 +528,7 @@ for (const a of artworks) {
 }
 const uniqueArtworks = [...byPath.values()];
 
-// Homepage recognition + teasers (from design sample)
-const homepageExtra = {
-  recognition: [
-    "Host of Journeys of an Artist on PBS",
-    "Work in Canada's permanent art collection",
-    "Featured artist, Algonquin Art Centre",
-    "Peterborough Pathway of Fame",
-  ],
-  thomsonTeaser: {
-    label: "The Centenary Project · 1912–1917",
-    title: "On the Trail of Tom Thomson, 100 Years Later",
-    body: "A multi-year journey paddling and painting in Algonquin Park — celebrating Tom Thomson as an outdoorsman, and changing Gene forever as an artist.",
-    cta: "Read the story of the project",
-    ctaHref: "/on-the-trail-of-tom-thomson/project-overview.html",
-    photoCaption: "On the trail, with canoe, fly rod and paint box.",
-  },
-  paintingTeasers: [
-    {
-      href: "/original-paintings/african-wildlife/",
-      title: "African Wildlife",
-      meta: "Oil, acrylic and graphite",
-    },
-    {
-      href: "/original-paintings/north-american-wildlife/",
-      title: "North American Wildlife",
-      meta: "Oil and graphite",
-    },
-    {
-      href: "/original-paintings/various-paintings/",
-      title: "Various Paintings",
-      meta: "Portraits, dogs, canoes, landscapes",
-    },
-  ],
-  pbsTeaser: {
-    label: "PBS Television Series",
-    title: "Journeys of an Artist",
-    body: "A 13-episode series following Gene’s work and travels. Episode 13 reviews the seasons — watch it on the PBS page.",
-    cta: "About the series and episodes",
-    ctaHref: "/pbs-tvs-journeys-of-an.html",
-  },
-};
+// homepage.json is curated by hand (design chrome + Gene’s words). Do not overwrite it here.
 
 // Write Markdown narratives
 function writeMd(filename, data, extraFront = {}) {
@@ -628,10 +592,6 @@ fs.writeFileSync(
 fs.writeFileSync(
   path.join(OUT_DATA, "pages.json"),
   JSON.stringify(pages, null, 2)
-);
-fs.writeFileSync(
-  path.join(OUT_DATA, "homepage.json"),
-  JSON.stringify(homepageExtra, null, 2)
 );
 fs.writeFileSync(
   path.join(OUT_DATA, "urls.json"),

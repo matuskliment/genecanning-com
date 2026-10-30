@@ -15,7 +15,8 @@
     "thumb": "barren-canyon--petawawa_128_hr.jpeg",
     "captionOriginal": "Barren Canyon Petawawa Gorges on Canvas Board SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "barrren-canyon-stormy-day",
@@ -33,7 +34,8 @@
     "thumb": "barrren-canyon-stormy-day_128_hr.jpeg",
     "captionOriginal": "Barrren Canyon Stormy Day on Canvas Board SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "brigham-falls-on-canvas",
@@ -51,7 +53,8 @@
     "thumb": "brigham-falls-on-canvas_128_hr.jpeg",
     "captionOriginal": "Brigham Falls on Canvas Board SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "potter-creek-on-wood-panel",
@@ -69,7 +72,8 @@
     "thumb": "potter-creek-on-wood-panel_102_hr.jpeg",
     "captionOriginal": "Potter Creek on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "tamaracks-in-fall-on-wood",
@@ -87,7 +91,8 @@
     "thumb": "tamaracks-in-fall-on-wood_128_hr.jpeg",
     "captionOriginal": "Tamaracks in Fall on Wood Panel SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "maple-on-fire-oil-on-wood",
@@ -105,7 +110,8 @@
     "thumb": "maple-on-fire-oil-on-wood_128_hr.jpeg",
     "captionOriginal": "Maple on Fire Oil on Wood Panel SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "island-pine-windy-day-oil",
@@ -123,7 +129,8 @@
     "thumb": "island-pine-windy-day-oil_102_hr.jpeg",
     "captionOriginal": "Island Pine, Windy Day Oil on Board SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "red-marsh-grasses-oil-on",
@@ -141,7 +148,8 @@
     "thumb": "red-marsh-grasses-oil-on_128_hr.jpeg",
     "captionOriginal": "Red Marsh Grasses Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "strong-light-on-the-marsh",
@@ -159,7 +167,8 @@
     "thumb": "strong-light-on-the-marsh_128_hr.jpeg",
     "captionOriginal": "Strong Light on the Marsh Oil on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "double-rainbow-over-joe",
@@ -177,7 +186,8 @@
     "thumb": "double-rainbow-over-joe_128_hr.jpeg",
     "captionOriginal": "Double Rainbow Over Joe Lake Oil on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "maple-leaves-oil-on-board",
@@ -195,7 +205,8 @@
     "thumb": "maple-leaves-oil-on-board_100_hr.jpeg",
     "captionOriginal": "Maple Leaves Oil on Board SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "tamarack-shoreline-oil-on",
@@ -213,7 +224,8 @@
     "thumb": "tamarack-shoreline-oil-on_128_hr.jpeg",
     "captionOriginal": "Tamarack Shoreline Oil on Canvas SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "intense-red-oil-on-canvas",
@@ -231,7 +243,8 @@
     "thumb": "intense-red-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "Intense Red Oil on Canvas SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "leaf-covered-rock-oil-on",
@@ -249,7 +262,8 @@
     "thumb": "leaf-covered-rock-oil-on_128_hr.jpeg",
     "captionOriginal": "Leaf Covered Rock Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "little-red-maple-oil-on",
@@ -267,7 +281,8 @@
     "thumb": "little-red-maple-oil-on_128_hr.jpeg",
     "captionOriginal": "Little Red Maple Oil on Panel SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "reflections-on-a-pond-oil",
@@ -285,7 +300,8 @@
     "thumb": "reflections-on-a-pon-oil-on_128_hr.jpeg",
     "captionOriginal": "Reflections on a Pond Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "tt-ranger-cabin-grand-lake",
@@ -303,7 +319,8 @@
     "thumb": "tt-ranger-cabin-grand-lake_128_hr.jpeg",
     "captionOriginal": "TT Ranger Cabin Grand Lake Sunset Oil on Canvas SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "canoe-lake-early-spring-1st",
@@ -321,7 +338,8 @@
     "thumb": "canoe-lake-early-spring-1st_128_hr.jpeg",
     "captionOriginal": "Canoe Lake Early Spring 1st Painting on Canvas Board SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "mowat-cemetery-on-canvas",
@@ -339,7 +357,8 @@
     "thumb": "mowat-cemetery-on-canvas_128_hr.jpeg",
     "captionOriginal": "Mowat Cemetery on Canvas Board",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "purple-cloud-on-canvas",
@@ -357,7 +376,8 @@
     "thumb": "purple-cloud-on-canvas_101_hr.jpeg",
     "captionOriginal": "Purple Cloud on Canvas Board Sold",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "shoreline-joe-lake-on-canva",
@@ -375,7 +395,8 @@
     "thumb": "shoreline-joe-lake-on-canva_100_hr.jpeg",
     "captionOriginal": "Shoreline Joe Lake on Canvas Board Sold",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "dancing-cloud-oil-on-canvas",
@@ -393,7 +414,8 @@
     "thumb": "dancing-cloud-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "Dancing Cloud Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "distant-rain-oil-on-linen",
@@ -411,7 +433,8 @@
     "thumb": "distant-rain-oil-on-linen_128_hr.jpeg",
     "captionOriginal": "Distant Rain Oil on Linen",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "mixed-weather-day-oil-on",
@@ -429,7 +452,8 @@
     "thumb": "mixed-weather-day-oil-on_128_hr.jpeg",
     "captionOriginal": "Mixed Weather Day Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "shoreline-canoe-oil-on",
@@ -447,7 +471,8 @@
     "thumb": "shoreline-canoe-oil-on_100_hr.jpeg",
     "captionOriginal": "Shoreline Canoe Oil on Canvas SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "star-lit-night-oil-on-canva",
@@ -465,7 +490,8 @@
     "thumb": "star-lit-night-oil-on-canva_128_hr.jpeg",
     "captionOriginal": "Star Lit Night Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "tea-lake-dam-oil-on-canvas",
@@ -483,7 +509,8 @@
     "thumb": "tea-lake-dam-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "Tea Lake Dam Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "my-chestnut-oil-on-canvas",
@@ -501,7 +528,8 @@
     "thumb": "my-chestnut-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "My Chestnut Oil on Canvas SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "canoe-lake-spring-oil-on",
@@ -519,7 +547,8 @@
     "thumb": "canoe-lake-spring-oil-on_128_hr.jpeg",
     "captionOriginal": "Canoe Lake Spring Oil on Panel SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "close-to-the-narrows-oil-on",
@@ -537,7 +566,8 @@
     "thumb": "close-to-the-narrows-oil-on_128_hr.jpeg",
     "captionOriginal": "Close to the Narrows Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "from-molly-island-oil-on",
@@ -555,7 +585,8 @@
     "thumb": "from-molly-island-oil-on_128_hr.jpeg",
     "captionOriginal": "From Molly Island Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "from-the-days-of-logging",
@@ -573,7 +604,8 @@
     "thumb": "from-the-days-of-logging_128_hr.jpeg",
     "captionOriginal": "From the Days of Logging Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "windy-day-oil-on-canvas",
@@ -591,7 +623,8 @@
     "thumb": "windy-day-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "Windy Day Oil on Canvas SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "hole-of-blue-oil-on-board",
@@ -609,7 +642,8 @@
     "thumb": "hole-of-blue-oil-on-board_128_hr.jpeg",
     "captionOriginal": "Hole of Blue Oil on Board",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "islands-canoe-lake-oil-on",
@@ -627,7 +661,8 @@
     "thumb": "islands-canoe-lake-oil-on_128_hr.jpeg",
     "captionOriginal": "Islands Canoe Lake Oil on Canvas SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "islands-stormy-day-oil-on",
@@ -645,7 +680,8 @@
     "thumb": "islands-stormy-day-oil-on_128_hr.jpeg",
     "captionOriginal": "Islands Stormy Day Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "rainy-day-my-tent-oil-on",
@@ -663,7 +699,8 @@
     "thumb": "rainy-day-my-tent-oil-on_128_hr.jpeg",
     "captionOriginal": "Rainy Day My Tent Oil on Board",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "algonquin-sunset-32-x40-oil",
@@ -681,15 +718,16 @@
     "thumb": "algonquin-sunset-32x40-oil_128_hr.jpeg",
     "captionOriginal": "Algonquin Sunset 32” x40\" Oil on Panel $6500",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "alqonquin-alligator-28-x-40",
     "oldPath": "/on-the-trail-of-tom-thomson/studio-paintings/alqonquin-alligator-28-x-40.html",
     "series": "studio-paintings",
     "galleryPath": "/on-the-trail-of-tom-thomson/studio-paintings/index.html",
-    "title": "Alqonquin Alligator Mixed Media on Board",
-    "medium": "",
+    "title": "Alqonquin Alligator",
+    "medium": "Mixed Media on Board",
     "widthIn": 40,
     "heightIn": 28,
     "status": "available",
@@ -698,8 +736,9 @@
     "image": "alqonquin-alligator-28-x-40.jpeg",
     "thumb": "alqonquin-alligator-28-x-40_128_hr.jpeg",
     "captionOriginal": "Alqonquin Alligator 28\" x 40\" Mixed Media on Board $4500",
-    "parseOk": false,
-    "kind": "painting"
+    "parseOk": true,
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "barren-canyon-stormy-day-32",
@@ -717,7 +756,8 @@
     "thumb": "barren-canyon-stormy-day-32_128_hr.jpeg",
     "captionOriginal": "Barren Canyon Stormy Day 32\" x 40\" Oil on Board $6500",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "barren-canyon-petawawa",
@@ -735,7 +775,8 @@
     "thumb": "barren-canyon-petawawa_95_hr.jpeg",
     "captionOriginal": "Barren Canyon, Petawawa Gorges 48\" x 36\" Oil on Panel $8500",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "brigham-falls-36-x-48-oil",
@@ -753,7 +794,8 @@
     "thumb": "brigham-falls-36-x-48-oil_128_hr.jpeg",
     "captionOriginal": "Brigham Falls 36\" x 48\" Oil on Panel $8500",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "canoe-lake-48-x-48-oil-on",
@@ -771,7 +813,8 @@
     "thumb": "canoe-lake-48-x-48-oil-on_128_hr.jpeg",
     "captionOriginal": "Canoe Lake 48\" x 48\" Oil on Panel $8500",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "double-rainbow-over-joe",
@@ -789,7 +832,8 @@
     "thumb": "double-rainbow-over-joe_128_hr-2.jpeg",
     "captionOriginal": "Double Rainbow over Joe Lake 40\" x 48\" Oil on Panel $7500",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "mowat-cemetery-and-the",
@@ -807,7 +851,8 @@
     "thumb": "mowat-cemetery-and-the_125_hr.jpeg",
     "captionOriginal": "Mowat Cemetery and the Keeper of Secrets 48\" x 48\" Oil on Panel. On permanent loan Ontario Parks and The Friends of Algonquin Park",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "my-campsite-big-trout-lake",
@@ -825,7 +870,8 @@
     "thumb": "my-campsite-big-trout-lake_128_hr-2.jpeg",
     "captionOriginal": "My Campsite Big Trout Lake 20” x48\" Oil on Panel. Collection of the artist",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "spring-creek-48-x-48-oil-on",
@@ -843,7 +889,8 @@
     "thumb": "spring-creek-40x48-oil-on_128_hr.jpeg",
     "captionOriginal": "Spring Creek 48” x 48\" Oil on Panel $7500",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "after-the-rain-on-wood",
@@ -861,7 +908,8 @@
     "thumb": "after-the-rain-on-wood_128_hr.jpeg",
     "captionOriginal": "After the Rain on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "algonquin-aligator-on-wood",
@@ -879,7 +927,8 @@
     "thumb": "algonquin-aligator-on-wood_128_hr.jpeg",
     "captionOriginal": "Algonquin Aligator on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "greens-of-midday-on-masonit",
@@ -897,7 +946,8 @@
     "thumb": "greens-of-midday-on-masonit_128_hr.jpeg",
     "captionOriginal": "Greens of Midday on Masonite Board",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "midsummer-day-on-wood-panel",
@@ -915,7 +965,8 @@
     "thumb": "midsummer-day-on-wood-panel_101_hr.jpeg",
     "captionOriginal": "Midsummer Day on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "summer-creek-on-wood-panel-",
@@ -933,7 +984,8 @@
     "thumb": "summer-creek-on-wood-panel-_101_hr.jpeg",
     "captionOriginal": "Summer Creek on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "sunset-grand-lake-on-wood",
@@ -951,7 +1003,8 @@
     "thumb": "sunset-grand-lake-on-wood_128_hr.jpeg",
     "captionOriginal": "Sunset Grand Lake on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "sunset-lake-cauchon-on-wood",
@@ -969,7 +1022,8 @@
     "thumb": "sunset-lake-cauchon-on-wood_128_hr.jpeg",
     "captionOriginal": "Sunset Lake Cauchon on Wood Panel SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "yellow-light-on-wood-panel",
@@ -987,7 +1041,8 @@
     "thumb": "yellow-light-on-wood-panel_102_hr.jpeg",
     "captionOriginal": "Yellow Light on Wood Panel Sold",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "beaver-dam-oil-on-wood",
@@ -1005,7 +1060,8 @@
     "thumb": "beaver-dam-oil-on-wood_128_hr.jpeg",
     "captionOriginal": "Beaver Dam Oil on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "blue-on-the-trail-to-mowat",
@@ -1023,7 +1079,8 @@
     "thumb": "blue-on-the-trail-to-mowat_128_hr.jpeg",
     "captionOriginal": "Blue on the Trail to Mowat. Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "my-campsite-big-trout-lake",
@@ -1041,7 +1098,8 @@
     "thumb": "my-campsite-big-trout-lake_128_hr.jpeg",
     "captionOriginal": "My Campsite Big Trout Lake Oil on wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "natural-bouquet-oil-on-wood",
@@ -1059,7 +1117,8 @@
     "thumb": "natural-bouquet-oil-on-wood_128_hr.jpeg",
     "captionOriginal": "Natural Bouquet Oil on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "pickeral-weed-oil-on-linen",
@@ -1077,7 +1136,8 @@
     "thumb": "pickeral-weed-oil-on-linen_128_hr.jpeg",
     "captionOriginal": "Pickeral Weed Oil on Linen",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "pine-and-rock-big-trout",
@@ -1095,7 +1155,8 @@
     "thumb": "pine-and-rock-big-trout_128_hr.jpeg",
     "captionOriginal": "Pine and Rock Big Trout Lake Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "tt-pine-and-rock-oil-on",
@@ -1113,7 +1174,8 @@
     "thumb": "tt-pine-and-rock-oil-on_100_hr.jpeg",
     "captionOriginal": "TT Pine and Rock Oil on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "twilight-oil-on-canvas-sold",
@@ -1131,7 +1193,8 @@
     "thumb": "twilight-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "Twilight Oil on Canvas SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "anchored-aligator-oil-on",
@@ -1149,7 +1212,8 @@
     "thumb": "anchored-aligator-oil-on_128_hr.jpeg",
     "captionOriginal": "Anchored Aligator Oil on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "pine-stump-oil-on-canvas",
@@ -1167,7 +1231,8 @@
     "thumb": "pine-stump-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "Pine Stump Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "pink-clouds-oil-on-canvas",
@@ -1185,7 +1250,8 @@
     "thumb": "pink-clouds-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "Pink Clouds Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "pink-sky-over-lake-oil-on",
@@ -1203,7 +1269,8 @@
     "thumb": "pink-sky-over-lake-oil-on_128_hr.jpeg",
     "captionOriginal": "Pink Sky Over Lake Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "summer-on-the-lake-oil-on",
@@ -1221,7 +1288,8 @@
     "thumb": "summer-on-the-lake-oil-on_128_hr.jpeg",
     "captionOriginal": "Summer on the Lake Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "the-colour-of-rock-oil-on",
@@ -1239,7 +1307,8 @@
     "thumb": "the-colour-of-rock-oil-on_128_hr.jpeg",
     "captionOriginal": "The Colour of Rock Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "twin-falls-oil-on-canvas",
@@ -1257,7 +1326,8 @@
     "thumb": "twin-falls-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "Twin Falls Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "the-soft-light-of-sunset",
@@ -1275,7 +1345,8 @@
     "thumb": "the-soft-light-of-sunset_128_hr.jpeg",
     "captionOriginal": "The Soft Light of Sunset Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "two-pine-and-a-rock-oil-on",
@@ -1293,7 +1364,8 @@
     "thumb": "two-pine-and-a-rock-oil-on_101_hr.jpeg",
     "captionOriginal": "Two Pine and a Rock Oil on Board SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "crocodile-rock-oil-on-panel",
@@ -1311,7 +1383,8 @@
     "thumb": "crocodile-rock-oil-on-panel_128_hr.jpeg",
     "captionOriginal": "Crocodile Rock Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "dead-tree-in-shadow-oil-on",
@@ -1329,7 +1402,8 @@
     "thumb": "dead-tree-in-shadow-oil-on_100_hr.jpeg",
     "captionOriginal": "Dead Tree in Shadow Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "fire-red-sunset-lake-caucho",
@@ -1347,7 +1421,8 @@
     "thumb": "fire-red-sunset-lake-caucho_128_hr.jpeg",
     "captionOriginal": "Fire Red Sunset Lake Cauchon Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "bridge-to-tanamakoon-oil-on",
@@ -1365,7 +1440,8 @@
     "thumb": "bridge-to-tanamakoon-oil-on_128_hr.jpeg",
     "captionOriginal": "Bridge to Tanamakoon Oil on Panel SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "intense-sun-oil-on-canvas",
@@ -1383,7 +1459,8 @@
     "thumb": "intense-sun-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "Intense Sun Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "misty-morning-joe-lake-oil",
@@ -1401,7 +1478,8 @@
     "thumb": "misty-morning-joe-lake-oil_128_hr.jpeg",
     "captionOriginal": "Misty Morning Joe Lake Oil on Board SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "over-hanging-branches-oil",
@@ -1419,7 +1497,8 @@
     "thumb": "over-hanging-branches-oil_128_hr.jpeg",
     "captionOriginal": "Over Hanging Branches Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "red-berries-oil-on-canvas",
@@ -1437,7 +1516,8 @@
     "thumb": "red-berries-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "Red Berries Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "rock-point-oil-on-panel",
@@ -1455,7 +1535,8 @@
     "thumb": "rock-point-oil-on-panel_100_hr.jpeg",
     "captionOriginal": "Rock Point Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "round-hill-oil-on-board",
@@ -1473,7 +1554,8 @@
     "thumb": "round-hill-oil-on-board_128_hr.jpeg",
     "captionOriginal": "Round Hill Oil on Board",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "shoreline-ragged-lake-oil",
@@ -1491,7 +1573,8 @@
     "thumb": "shoreline-ragged-lake-oil_128_hr.jpeg",
     "captionOriginal": "Shoreline Ragged Lake Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "small-bay-algonquin-oil-on",
@@ -1509,7 +1592,8 @@
     "thumb": "small-bay-algonquin-oil-on_128_hr.jpeg",
     "captionOriginal": "Small Bay Algonquin Oil on Panel SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "soft-light-joe-lake-oil-on",
@@ -1527,7 +1611,8 @@
     "thumb": "soft-light-joe-lake-oil-on_128_hr.jpeg",
     "captionOriginal": "Soft Light Joe Lake Oil on Board SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "forest-spotlight-on-masonit",
@@ -1545,7 +1630,8 @@
     "thumb": "forest-spotlight-on-masonit_100_hr.jpeg",
     "captionOriginal": "Forest Spotlight on Masonite Board",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "winter-road-on-wood-panel",
@@ -1563,7 +1649,8 @@
     "thumb": "winter-road-on-wood-panel_128_hr.jpeg",
     "captionOriginal": "Winter Road on Wood Panel Sold",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "winter-rock-on-wood-panel",
@@ -1581,7 +1668,8 @@
     "thumb": "winter-rock-on-wood-panel_128_hr.jpeg",
     "captionOriginal": "Winter Rock on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "frozen-lake-oil-on-canvas",
@@ -1599,7 +1687,8 @@
     "thumb": "frozen-lake-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "Frozen Lake Oil on Canvas SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "spring-creek-oil-on-wood",
@@ -1617,7 +1706,8 @@
     "thumb": "spring-creek-oil-on-wood_128_hr.jpeg",
     "captionOriginal": "Spring Creek Oil on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "sunlit-creek-in-winter-oil",
@@ -1635,7 +1725,8 @@
     "thumb": "sunlit-creek-in-winter-oil_128_hr.jpeg",
     "captionOriginal": "Sunlit Creek in Winter Oil on Wood Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "winter-creek-oil-on-board",
@@ -1653,7 +1744,8 @@
     "thumb": "winter-creek-oil-on-board_128_hr.jpeg",
     "captionOriginal": "Winter Creek Oil on Board",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "winter-hillside-oil-on",
@@ -1671,7 +1763,8 @@
     "thumb": "winter-hillside-oil-on_101_hr.jpeg",
     "captionOriginal": "Winter Hillside Oil on Board",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "midnight-in-march-oil-on",
@@ -1689,7 +1782,8 @@
     "thumb": "midnight-in-march-oil-on_128_hr.jpeg",
     "captionOriginal": "Midnight in March Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "strips-of-shadow-oil-on",
@@ -1707,7 +1801,8 @@
     "thumb": "strips-of-shadow-oil-on_128_hr.jpeg",
     "captionOriginal": "Strips of Shadow Oil on Board",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "winter-light-smoke-lake-oil",
@@ -1725,7 +1820,8 @@
     "thumb": "winter-light-smoke-lake-oil_128_hr.jpeg",
     "captionOriginal": "Winter Light Smoke Lake Oil on Board",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "beaver-dam-arowhon-road-oil",
@@ -1743,7 +1839,8 @@
     "thumb": "beaver-dam-arowhon-road-oil_128_hr.jpeg",
     "captionOriginal": "Beaver Dam Arowhon Road Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "cache-lake-framed-oil-on",
@@ -1761,7 +1858,8 @@
     "thumb": "cache-lake-framed-oil-on_128_hr.jpeg",
     "captionOriginal": "Cache Lake Framed Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "cold-day-winter-oil-on",
@@ -1779,7 +1877,8 @@
     "thumb": "cold-day-winter-oil-on_128_hr.jpeg",
     "captionOriginal": "Cold Day Winter Oil on Board SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "early-spring-oil-on-panel",
@@ -1797,7 +1896,8 @@
     "thumb": "early-spring-oil-on-panel_128_hr.jpeg",
     "captionOriginal": "Early Spring Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "early-spring-soft-light-oil",
@@ -1815,7 +1915,8 @@
     "thumb": "early-spring-soft-light-oil_128_hr.jpeg",
     "captionOriginal": "Early Spring Soft Light Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "fog-on-a-snowy-day-oil-on",
@@ -1833,7 +1934,8 @@
     "thumb": "fog-on-a-snowy-day-oil-on_128_hr.jpeg",
     "captionOriginal": "Fog on a Snowy Day Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "ice-flow-oil-on-canvas",
@@ -1851,7 +1953,8 @@
     "thumb": "ice-flow-oil-on-canvas_128_hr.jpeg",
     "captionOriginal": "Ice Flow Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "melting-creek-oil-on-panel",
@@ -1869,7 +1972,8 @@
     "thumb": "melting-creek-oil-on-panel_128_hr.jpeg",
     "captionOriginal": "Melting Creek Oil on Panel",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "slow-moving-water-oil-on",
@@ -1887,7 +1991,8 @@
     "thumb": "slow-moving-water-oil-on_128_hr.jpeg",
     "captionOriginal": "Slow Moving Water Oil on Canvas",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "spring-melt-oil-on-panel",
@@ -1905,7 +2010,8 @@
     "thumb": "spring-melt-oil-on-panel_128_hr.jpeg",
     "captionOriginal": "Spring Melt Oil on Panel SOLD",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "treetop-leopard-48-x-86-oil",
@@ -1923,7 +2029,8 @@
     "thumb": "_mg_1374_69_hr.jpeg",
     "captionOriginal": "Treetop Leopard 48\" x 86” Oil on Masonite $15,000",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "leaving-the-pride-12-x-24",
@@ -1941,7 +2048,8 @@
     "thumb": "canning-moving-on_128_hr-3.jpeg",
     "captionOriginal": "Leaving the Pride 12” x 24” Oil on Birch Panel Collection of the Artist",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "great-kudu-18-x-24-oil-on",
@@ -1959,7 +2067,8 @@
     "thumb": "great-kudu-in-the-field-2_128_hr.jpeg",
     "captionOriginal": "Great Kudu 18” x 24” Oil on Linen Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "rafiki-13-34-x-13-34-oil-on",
@@ -1977,7 +2086,8 @@
     "thumb": "rafiki_125_hr.jpeg",
     "captionOriginal": "Rafiki 13 3/4” x 13 3/4” Oil on Linen Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "following-mom-16-20-oil-on",
@@ -1995,7 +2105,8 @@
     "thumb": "4x3-elephant_128_hr.jpeg",
     "captionOriginal": "Following Mom 16” 20” Oil on Masonite Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "after-the-rain-serengetti",
@@ -2013,7 +2124,8 @@
     "thumb": "serengetti-giraffe-9x30_128_hr.jpeg",
     "captionOriginal": "After the Rain, Serengetti Giraffe 12\" x 36” Oil on Masonite Collection of Artist",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "mbogo-staredown-24-x-48",
@@ -2031,7 +2143,8 @@
     "thumb": "6625x3625-cape-buffalo_128_hr.jpeg",
     "captionOriginal": "M'Bogo Staredown 24” x 48” Acrylic on Masonite Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "acrylic"
   },
   {
     "slug": "memories-of-zanzibar-10-x",
@@ -2049,7 +2162,8 @@
     "thumb": "275x4-memories-of-zanzibar_88_hr.jpeg",
     "captionOriginal": "Memories of Zanzibar 10” x 20” Oil on Linen Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "mid-day-rest-24-x-36-acryli",
@@ -2067,7 +2181,8 @@
     "thumb": "mid-day-rest_128_hr.jpeg",
     "captionOriginal": "Mid Day Rest 24” x 36” Acrylic on Masonite Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "acrylic"
   },
   {
     "slug": "tanzania-lioness-9-x-12",
@@ -2085,7 +2200,8 @@
     "thumb": "tanzania-lioness-proof-2_128_hr.jpeg",
     "captionOriginal": "Tanzania Lioness 9” x 12” Graphite on Bristol Paper $550",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "graphite"
   },
   {
     "slug": "an-eye-on-you-3-12-x-5-oil",
@@ -2103,7 +2219,8 @@
     "thumb": "5x35-an-eye-on-you_128_hr.jpeg",
     "captionOriginal": "An Eye on You 3 1/2” x 5” Oil on Masonite Collection of the Artist",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "moonlit-leopard-5-x-7-graph",
@@ -2121,7 +2238,8 @@
     "thumb": "genes-leopard-drawing-5x7_128_hr.jpeg",
     "captionOriginal": "Moonlit Leopard 5” x 7” Graphite on Stonehenge Paper $450",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "graphite"
   },
   {
     "slug": "mid-air-9-x-12-graphite-on",
@@ -2139,7 +2257,8 @@
     "thumb": "mid-air-proof-2_128_hr.jpeg",
     "captionOriginal": "Mid Air 9” x 12” Graphite on Bristol Paper $550",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "graphite"
   },
   {
     "slug": "flirting-18-x-24-oil-on",
@@ -2157,7 +2276,8 @@
     "thumb": "img_3222-low-rez_128_hr.jpeg",
     "captionOriginal": "Flirting 18” x 24” Oil on Linen Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "resting-after-a-fresh-snow",
@@ -2175,7 +2295,8 @@
     "thumb": "resting-after-a-fresh-snow_78_hr.jpeg",
     "captionOriginal": "Resting After a Fresh Snow Final 15” x 22” Oil on Linen $1700",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "study-for-resting-after-a",
@@ -2193,7 +2314,8 @@
     "thumb": "barred-owl-study-final_81_hr.jpeg",
     "captionOriginal": "Study for Resting After a Fresh Snow 8” x 12” Graphite on Tinted Paper, $650",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "graphite"
   },
   {
     "slug": "the-dance-8-x-10-oil-on",
@@ -2211,7 +2333,8 @@
     "thumb": "img_9122-low-rez-8-x-10_128_hr.jpeg",
     "captionOriginal": "The Dance 8” x 10” Oil on Canvas $750",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "morning-mist-and-moose",
@@ -2229,7 +2352,8 @@
     "thumb": "morning-mist-and-moose_128_hr-2.jpeg",
     "captionOriginal": "Morning Mist and Moose Family 26\" x 40\" Oil on Masonite Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "study-for-morning-mist-and",
@@ -2247,7 +2371,8 @@
     "thumb": "morning-mist-and-moose_128_hr.jpeg",
     "captionOriginal": "Study for Morning Mist and Moose Family 9” x 12\" Oil on Masonite $650",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "following-the-trail-12-x-24",
@@ -2265,7 +2390,8 @@
     "thumb": "img_3440-low-rez_128_hr.jpeg",
     "captionOriginal": "Following the Trail 12” x 24” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "lone-wolf-16-x-40-oil-on",
@@ -2283,7 +2409,8 @@
     "thumb": "lone-wolf-16x40-oil-on_128_hr.jpeg",
     "captionOriginal": "Lone Wolf 16” x 40\" Oil on Masonite. Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "bartlett-fox-18-x-24-oil-on",
@@ -2301,7 +2428,8 @@
     "thumb": "bartlett-fox-18x24-oil-on_128_hr.jpeg",
     "captionOriginal": "Bartlett Fox 18” x 24\" Oil on Linen Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "young-bull-9-x-12-oil-on",
@@ -2319,7 +2447,8 @@
     "thumb": "img_9115-low-rez-7-x-9_128_hr.jpeg",
     "captionOriginal": "Taking Time for a Snack 9” x 12” Oil on Birch Panel Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "pride-14-x-30-oil-on-masoni",
@@ -2337,7 +2466,8 @@
     "thumb": "pride-72-dpi_85_hr.jpeg",
     "captionOriginal": "Pride 14” x 30” Oil on Masonite Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "operation-migration-to-save",
@@ -2355,7 +2485,8 @@
     "thumb": "flying-home_128_hr.jpeg",
     "captionOriginal": "Operation Migration to Save a Species Oil on Birch Panel Private Collection",
     "parseOk": false,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "early-morning-flight-9-x-12",
@@ -2373,7 +2504,8 @@
     "thumb": "early-morning-found-lake_94_hr.jpeg",
     "captionOriginal": "Early Morning Flight 9” x 12” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "running-in-snow-12-x-20-oil",
@@ -2391,7 +2523,8 @@
     "thumb": "running-in-snow-12x20-oil_128_hr.jpeg",
     "captionOriginal": "Running in Snow 12” x 20\" Oil on Birch Panel Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "algonquin-chickadee-5-x7",
@@ -2409,7 +2542,8 @@
     "thumb": "algonquin--chickadee-5x7_128_hr.jpeg",
     "captionOriginal": "Algonquin Chickadee 5” x7” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "on-the-hunt-8-x-10-oil-on",
@@ -2427,7 +2561,8 @@
     "thumb": "img_1213-low-rez_128_hr.jpeg",
     "captionOriginal": "On the Hunt 8” x 10” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "algonquin-canada-goose-6-x",
@@ -2445,7 +2580,8 @@
     "thumb": "algonquin-canada-goose-6x6_127_hr.jpeg",
     "captionOriginal": "Algonquin Canada Goose 6” x 6\" Oil on Board Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "walk-by-the-beaver-dam-8-x",
@@ -2463,7 +2599,8 @@
     "thumb": "img_0539-low-rez_128_hr.jpeg",
     "captionOriginal": "Walk By the Beaver Dam 8” x 10” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "someting-caught-his-eye-5-x",
@@ -2481,7 +2618,8 @@
     "thumb": "img_2152-low-rez-5-x-7_128_hr.jpeg",
     "captionOriginal": "Someting Caught His Eye 5” x 7” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "the-take-off-buffleheads-11",
@@ -2499,7 +2637,8 @@
     "thumb": "img_9107-low-rez_128_hr.jpeg",
     "captionOriginal": "The Take Off, Buffleheads 11” x 14” Oil on Linen $1100",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "from-above-8-x-10-oil-on",
@@ -2517,7 +2656,8 @@
     "thumb": "img_9128-low-rez-8-x-10_128_hr.jpeg",
     "captionOriginal": "From Above 8” x 10” Oil on Canvas $750",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "study-for-something-caught",
@@ -2535,7 +2675,8 @@
     "thumb": "something-caught-his-eye_128_hr.jpeg",
     "captionOriginal": "Study for Something Caught his Eye 5” x 7” Graphite on Stonhenge Paper Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "graphite"
   },
   {
     "slug": "snowy-owl-study-5-x-7-oil",
@@ -2553,7 +2694,8 @@
     "thumb": "genes-snowy-owl-raw_128_hr.jpeg",
     "captionOriginal": "Snowy Owl Study 5\" x 7\" Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "passenger-pigeon-11-x-14",
@@ -2571,7 +2713,8 @@
     "thumb": "passenger-pigeon_116_hr.jpeg",
     "captionOriginal": "Passenger Pigeon, 11” x 14” Oil on Linen, Collection of IAMS Museum",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "stopped-to-look-18-x-24-oil",
@@ -2589,7 +2732,8 @@
     "thumb": "stopped-to-look-final_128_hr.jpeg",
     "captionOriginal": "Stopped to Look 18” x 24” Oil on Linen $1950",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "evening-walk-in-the-woods",
@@ -2607,7 +2751,8 @@
     "thumb": "a-walk-in-the-woods-low-rez_128_hr.jpeg",
     "captionOriginal": "Evening Walk in the Woods 12” x 24” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "fall-in-algonquin-16-x-20",
@@ -2625,7 +2770,8 @@
     "thumb": "img_3439-low-rez-16-x-20_128_hr.jpeg",
     "captionOriginal": "Fall in Algonquin 16” x 20” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "restful-evening-8-x-10-oil",
@@ -2643,7 +2789,8 @@
     "thumb": "img_9113-low-rez-8-x-10_128_hr.jpeg",
     "captionOriginal": "Restful Evening 8” x 10” Oil on Canvas $650",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "clyde-pair-12-x-16-oil-on",
@@ -2661,7 +2808,8 @@
     "thumb": "genes-showing-clydes-raw_128_hr.jpeg",
     "captionOriginal": "Clyde Pair 12\" x 16\" Oil on Linen $1300",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "the-heart-of-new-orleans-9",
@@ -2679,7 +2827,8 @@
     "thumb": "heart-of-new-orleans-9x12_95_hr.jpeg",
     "captionOriginal": "The Heart of New Orleans 9\" x 12\" Oil on Linen Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "morning-fog-12-x-16-oil-on",
@@ -2697,7 +2846,8 @@
     "thumb": "morning-fog-unframed_128_hr.jpeg",
     "captionOriginal": "Morning Fog 12” x 16” Oil on Linen $1050",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "slow-moving-water-7-x-16",
@@ -2715,7 +2865,8 @@
     "thumb": "slow-moving-water-unframed_60_hr.jpeg",
     "captionOriginal": "Slow Moving Water 7” x 16” Oil on Masonite Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "the-green-light-of-evening",
@@ -2733,7 +2884,8 @@
     "thumb": "the-green-light-of-evening_128_hr.jpeg",
     "captionOriginal": "The Green Light of Evening 8” x 15” Oil on Panel $950",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "the-blue-light-of-evening-8",
@@ -2751,7 +2903,8 @@
     "thumb": "the-blue-light-of-evening_128_hr.jpeg",
     "captionOriginal": "The Blue Light of Evening 8” x 15” Oil on Panel Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "the-power-of-a-setting-sun",
@@ -2769,7 +2922,8 @@
     "thumb": "the-power-of-a-setting-sun_128_hr.jpeg",
     "captionOriginal": "The Power of a Setting Sun Final 6” x 8” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "algonquin-gold-oil-on-mason",
@@ -2787,7 +2941,8 @@
     "thumb": "6x45-algonquin-gold-trent_128_hr.jpeg",
     "captionOriginal": "Algonquin Gold Oil on Masonite 18\" x 24\" Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "moonlit-rock-5-x-9-oil-on",
@@ -2805,7 +2960,8 @@
     "thumb": "moonlit-rock_62_hr.jpeg",
     "captionOriginal": "Moonlit Rock 5” x 9” Oil on Masonite Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "lake-tanamakoon-11-x-14",
@@ -2823,7 +2979,8 @@
     "thumb": "img_1308_128_hr.jpeg",
     "captionOriginal": "Lake Tanamakoon 11\" x 14\" Graphite on Stonehenge Paper Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "graphite"
   },
   {
     "slug": "white-rock-tanamakoon-5-x-7",
@@ -2841,7 +2998,8 @@
     "thumb": "genes-white-rock-tanamakoon_128_hr.jpeg",
     "captionOriginal": "White Rock, Tanamakoon 5\" x 7\" Graphite on Paper $450",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "graphite"
   },
   {
     "slug": "lake-tanamakoon-channel-5",
@@ -2859,7 +3017,8 @@
     "thumb": "genes-lake-tanamakoon-chann_128_hr.jpeg",
     "captionOriginal": "Lake Tanamakoon Channel 5” x7\" Graphite on Stonehenge Paper Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "graphite"
   },
   {
     "slug": "purple-light-8-x-10-oil-on",
@@ -2877,7 +3036,8 @@
     "thumb": "img_1067-low-rez_128_hr.jpeg",
     "captionOriginal": "Purple Light 8” x 10” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "orange-light-6-x-8-oil-on",
@@ -2895,7 +3055,8 @@
     "thumb": "img_1074-low-rez_94_hr.jpeg",
     "captionOriginal": "Orange Light 6” x 8” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "morning-ride-18-x-24-oil-on",
@@ -2913,7 +3074,8 @@
     "thumb": "img_3229-low-rez_94_hr.jpeg",
     "captionOriginal": "Morning Ride 18” x 24” Oil on Linen Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "night-light-8-x-16-oil-on",
@@ -2931,7 +3093,8 @@
     "thumb": "img_3446-low-rez-9-x-12_94_hr.jpeg",
     "captionOriginal": "Night Light 8” x 16” Oil on Canvas Privatre Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "turtle-rock-12-x-48-oil-on",
@@ -2949,7 +3112,8 @@
     "thumb": "img_3453-copy_128_hr.jpeg",
     "captionOriginal": "Turtle Rock 12” x 48” Oil on Panel $6500",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "snubbed-12-x-24-oil-on",
@@ -2967,7 +3131,8 @@
     "thumb": "snubbed-proof-oct-28-2005_128_hr.jpeg",
     "captionOriginal": "Snubbed 12\" x 24\" Oil on Masonite Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "bright-light-ragged-lake-8",
@@ -2985,7 +3150,8 @@
     "thumb": "img_9110-low-rez_128_hr.jpeg",
     "captionOriginal": "Bright Light, Ragged Lake 8” x 10” Oil on Canvas $650",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "mist-9-x-12-oil-on-canvas",
@@ -3003,7 +3169,8 @@
     "thumb": "img_9125-low-rez-8-x-10-2_99_hr.jpeg",
     "captionOriginal": "Mist 9” x 12” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "peace-in-algonquin-10x-20",
@@ -3021,7 +3188,8 @@
     "thumb": "img_9130-low-rez-12-x-24-2_128_hr.jpeg",
     "captionOriginal": "Peace in Algonquin 10”x 20” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "isolation-10-x-48-oil-on",
@@ -3039,7 +3207,8 @@
     "thumb": "isolation-low-rez-12-x-48_128_hr.jpeg",
     "captionOriginal": "Isolation 10” x 48” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "last-rays-of-light-9-x-12",
@@ -3057,7 +3226,8 @@
     "thumb": "last-rays-of-light-low-rez_91_hr.jpeg",
     "captionOriginal": "Last Rays of Light 9” x 12” Oil on Canvas $850",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "little-falls-8-x-10-oil-on",
@@ -3075,7 +3245,8 @@
     "thumb": "little-falls-low-rez-8-x-10_128_hr.jpeg",
     "captionOriginal": "Little Falls 8” x 10” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "moon-light-over-a-pine-5x-7",
@@ -3093,7 +3264,8 @@
     "thumb": "monnlight-over-a-pine-low_128_hr.jpeg",
     "captionOriginal": "Moon Light over a Pine 5”x 7” $450",
     "parseOk": false,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "moonglow-8-x-10-private",
@@ -3111,7 +3283,8 @@
     "thumb": "moonglow-low-rez-8-x-10_128_hr.jpeg",
     "captionOriginal": "Moonglow 8” x 10” Private Collection",
     "parseOk": false,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": ""
   },
   {
     "slug": "moving-water-in-afternoon",
@@ -3129,7 +3302,8 @@
     "thumb": "moving-water-in-afternoon_128_hr.jpeg",
     "captionOriginal": "Moving Water in Afternoon Light 8”x 10” Oil on Canvas $650",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "solo-canoe-8-x-10-oil-on",
@@ -3147,7 +3321,8 @@
     "thumb": "sunset-paddle-low-rez-8x10_128_hr.jpeg",
     "captionOriginal": "Solo Canoe 8” x 10” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "red-light-sunset-5-x-7-oil",
@@ -3165,7 +3340,8 @@
     "thumb": "the-power-of-a-setting-sun_128_hr-2.jpeg",
     "captionOriginal": "Red Light Sunset 5” x 7” Oil on Canvas Private Collection",
     "parseOk": true,
-    "kind": "painting"
+    "kind": "painting",
+    "mediumKey": "oil"
   },
   {
     "slug": "washday-edition-of-500-19",
@@ -3183,7 +3359,8 @@
     "thumb": "washday_128_hr.jpeg",
     "captionOriginal": "Washday. Edition of 500. 19 1/2\" x 27 1/2\" $350 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "last-look-edition-of-199-15",
@@ -3201,7 +3378,8 @@
     "thumb": "last-look_128_hr.jpeg",
     "captionOriginal": "Last Look. Edition of 199. 15 1/2\" x 22 1/2\" $175 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "the-chessie-james-gang",
@@ -3219,7 +3397,8 @@
     "thumb": "the-chessie-james-gang_128_hr.jpeg",
     "captionOriginal": "The Chessie James Gang. Edition of 750. 8 1/4\" x 10 1/4\" $55 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "mittschief-edition-of-199",
@@ -3237,7 +3416,8 @@
     "thumb": "mittschief_128_hr.jpeg",
     "captionOriginal": "Mittschief. Edition of 199. 15 1/2\" x 22 1/4\" $155 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "first-taste-of-spring-editi",
@@ -3255,7 +3435,8 @@
     "thumb": "first-taste-of-spring_72_hr.jpeg",
     "captionOriginal": "First Taste of Spring. Edition of 500. 15 1/4\" x 26\" $175 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "have-nose-will-travel-ediit",
@@ -3273,7 +3454,8 @@
     "thumb": "have-nose-will-travel_128_hr.jpeg",
     "captionOriginal": "Have Nose Will Travel. Ediiton of 750. 8\" x 10\" $55 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "no-load-too-big-edition-of",
@@ -3291,7 +3473,8 @@
     "thumb": "no-load-too-big_128_hr.jpeg",
     "captionOriginal": "No Load Too Big. Edition of 500. 16\" x 20\" $135 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "along-the-fence-line-open",
@@ -3309,7 +3492,8 @@
     "thumb": "along-the-fence-line-origin_128_hr.jpeg",
     "captionOriginal": "Along the Fence Line. Open Edition. 7 1/2\" x 14 1/4\" $20 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "barred-owl-study-open-editi",
@@ -3327,7 +3511,8 @@
     "thumb": "5875x4125-barred-owl_128_hr.jpeg",
     "captionOriginal": "Barred Owl Study. Open Edition. 4 3/4\" x 6 3/4\" $20 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "young-blood-edition-of-99",
@@ -3345,7 +3530,8 @@
     "thumb": "young-blood-web_128_hr.jpeg",
     "captionOriginal": "Young Blood. Edition of 99. 10\" x 30” $95 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "my-twiga-edition-of-39-36-x",
@@ -3363,7 +3549,8 @@
     "thumb": "3x75-giraffe_51_hr.jpeg",
     "captionOriginal": "My Twiga. Edition of 39. 36” x 72”. $1000 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "anticipation-open-edition-7",
@@ -3381,7 +3568,8 @@
     "thumb": "anticipation-print-2_128_hr.jpeg",
     "captionOriginal": "Anticipation. Open Edition. 7 1/2\" x 9 1/2” $20 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "through-the-window-edition",
@@ -3399,7 +3587,8 @@
     "thumb": "through-the-window-2_101_hr.jpeg",
     "captionOriginal": "Through the Window. Edition of 300. 9 3/4” x 13” $65 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "orchard-chickadee-edition",
@@ -3417,7 +3606,8 @@
     "thumb": "orchard-chickadee-2_128_hr.jpeg",
     "captionOriginal": "Orchard Chickadee. Edition of 470. 8” x 10” $45 unframed",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   },
   {
     "slug": "off-balance-ediiton-of-470",
@@ -3435,6 +3625,7 @@
     "thumb": "5-x-4-off-balance_128_hr.jpeg",
     "captionOriginal": "Off Balance. Ediiton of 470. 12” x 15 1/4” $65",
     "parseOk": false,
-    "kind": "print"
+    "kind": "print",
+    "mediumKey": ""
   }
 ]

@@ -8,21 +8,18 @@ layout: base.njk
 eleventyComputed:
   title: "{{ art.title }} · Gene Canning"
   description: "{{ art.captionOriginal }}"
+  ogImage: "{{ art.image | ogImageUrl }}"
+  season: "{% if art.series == 'spring-season-paintings' %}spring{% elif art.series == 'summer-season-paintings' %}summer{% elif art.series == 'fall-season-paintings' %}fall{% elif art.series == 'winter-season-paintings' %}winter{% endif %}"
 ---
-{% set seasonName = "" %}
-{% if art.series == "spring-season-paintings" %}{% set seasonName = "spring" %}
-{% elif art.series == "summer-season-paintings" %}{% set seasonName = "summer" %}
-{% elif art.series == "fall-season-paintings" %}{% set seasonName = "fall" %}
-{% elif art.series == "winter-season-paintings" %}{% set seasonName = "winter" %}
-{% endif %}
-{% if seasonName %}
-<script>document.body.setAttribute("data-season", "{{ seasonName }}");</script>
-{% endif %}
-
 {% set sizeText = art | sizeLabel %}
 {% set statusText = art | statusLabel %}
 {% set zoomUrl = art.image | zoomJpegUrl %}
 {% set displaySrc = art.image | fullJpegUrl %}
+{% set colours = art.palette or palettes[art.slug] %}
+{% set isThomsonField = art.series == "spring-season-paintings"
+  or art.series == "summer-season-paintings"
+  or art.series == "fall-season-paintings"
+  or art.series == "winter-season-paintings" %}
 
 <div class="wrap page-intro">
   <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -30,6 +27,7 @@ eleventyComputed:
     · {{ art.title }}
   </nav>
   <h1>{{ art.title }}</h1>
+  <span class="gc-knife{% if season %} gc-knife--lake{% endif %}" aria-hidden="true"></span>
 </div>
 
 <div class="wrap painting-layout">
@@ -45,7 +43,6 @@ eleventyComputed:
       {% if zoomUrl %}
       <button type="button" class="gc-tool" data-gc-zoom-toggle aria-controls="painting" aria-expanded="false" hidden>Look closely</button>
       {% endif %}
-      <button type="button" class="gc-tool" data-gc-print>Print details</button>
     </div>
 
     {% if art.widthIn and art.heightIn %}
@@ -61,7 +58,11 @@ eleventyComputed:
   <div>
     <dl class="facts">
       {% if art.medium %}<dt>Medium</dt><dd>{{ art.medium }}</dd>{% endif %}
-      {% if sizeText %}<dt>Size</dt><dd>{{ sizeText }}</dd>{% endif %}
+      {% if sizeText %}<dt>Size</dt><dd>{{ sizeText }}{% if isThomsonField %} unframed{% endif %}</dd>{% endif %}
+      {% if isThomsonField %}
+      <dt>Frame</dt><dd>As shown on the project title page</dd>
+      <dt>Verso</dt><dd>Signed, titled, dated, with Thomson project information</dd>
+      {% endif %}
       {% if art.edition %}<dt>Edition</dt><dd>{{ art.edition }}</dd>{% endif %}
       <dt>Status</dt>
       <dd>
@@ -72,6 +73,17 @@ eleventyComputed:
         {% endif %}
       </dd>
     </dl>
+
+    {% if colours and colours.length %}
+    <figure class="gc-palette" aria-hidden="true">
+      <figcaption class="gc-palette-title">Colours in this painting</figcaption>
+      <ul class="gc-palette-dabs">
+        {% for c in colours %}
+        <li><span class="gc-dab" style="--c:{{ c }}"></span></li>
+        {% endfor %}
+      </ul>
+    </figure>
+    {% endif %}
 
     <div id="enquire" class="gc-noprint">
       <h2 style="font-size: 24px; margin-bottom: 12px;">Ask about this work</h2>

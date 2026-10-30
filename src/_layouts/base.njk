@@ -1,8 +1,12 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js{% if section == 'home' %} gc-enter{% endif %}">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F5F1E8">
+  {% if section == "home" %}
+  {% include "arrival-snippet.html" %}
+  {% endif %}
   <title>{{ title }}</title>
   {% if description %}<meta name="description" content="{{ description }}">{% endif %}
   <link rel="canonical" href="{{ (canonical or page.url) | absoluteUrl }}">

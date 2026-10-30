@@ -9,16 +9,16 @@
   <div class="wrap">
     <a class="gc-sig" href="/">
       {% include "signature.svg" %}
-      <span class="tagline">{{ site.tagline }}</span>
+      <span class="gc-tagline">{{ site.tagline }}</span>
     </a>
     <button type="button" class="gc-nav-toggle" aria-expanded="false" aria-controls="site-nav" data-gc-nav-toggle>Menu</button>
     <nav id="site-nav" class="gc-nav" aria-label="Main">
-      <a href="/original-paintings/" {% if navPaintings %}aria-current="page"{% endif %}>Paintings</a>
-      <a href="/on-the-trail-of-tom-thomson/" {% if navThomson %}aria-current="page"{% endif %}>Tom Thomson Project</a>
-      <a href="/prints/" {% if navPrints %}aria-current="page"{% endif %}>Prints</a>
-      <a href="/pbs-tvs-journeys-of-an.html" {% if navPbs %}aria-current="page"{% endif %}>PBS Series</a>
-      <a href="/biography.html" {% if navAbout %}aria-current="page"{% endif %}>About Gene</a>
-      <a href="/contact-gene.html" {% if navContact %}aria-current="page"{% endif %}>Contact</a>
+      <a class="gc-pencil" href="/original-paintings/" {% if navPaintings %}aria-current="page"{% endif %}>Paintings</a>
+      <a class="gc-pencil" href="/on-the-trail-of-tom-thomson/" {% if navThomson %}aria-current="page"{% endif %}>Tom Thomson Project</a>
+      <a class="gc-pencil" href="/prints/" {% if navPrints %}aria-current="page"{% endif %}>Prints</a>
+      <a class="gc-pencil" href="/pbs-tvs-journeys-of-an.html" {% if navPbs %}aria-current="page"{% endif %}>PBS Series</a>
+      <a class="gc-pencil" href="/biography.html" {% if navAbout %}aria-current="page"{% endif %}>About Gene</a>
+      <a class="gc-pencil" href="/contact-gene.html" {% if navContact %}aria-current="page"{% endif %}>Contact</a>
     </nav>
   </div>
 </header>
@@ -26,10 +26,86 @@
   (() => {
     const btn = document.querySelector('[data-gc-nav-toggle]');
     const nav = document.getElementById('site-nav');
+    const header = document.querySelector('.gc-header');
     if (!btn || !nav) return;
-    btn.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
+
+    const MQ = window.matchMedia('(max-width: 900px)');
+    let scrollY = 0;
+    let scrollLocked = false;
+
+    const inertTargets = () => [
+      document.getElementById('main'),
+      document.querySelector('.gc-footer'),
+    ].filter(Boolean);
+
+    const lockScroll = (lock) => {
+      const html = document.documentElement;
+      const body = document.body;
+      if (lock) {
+        if (scrollLocked) return;
+        scrollLocked = true;
+        scrollY = window.scrollY || window.pageYOffset || 0;
+        html.style.overflow = 'hidden';
+        html.style.overscrollBehavior = 'none';
+        body.style.position = 'fixed';
+        body.style.top = `-${scrollY}px`;
+        body.style.left = '0';
+        body.style.right = '0';
+        body.style.width = '100%';
+      } else {
+        if (!scrollLocked) return;
+        scrollLocked = false;
+        html.style.overflow = '';
+        html.style.overscrollBehavior = '';
+        body.style.position = '';
+        body.style.top = '';
+        body.style.left = '';
+        body.style.right = '';
+        body.style.width = '';
+        window.scrollTo(0, scrollY);
+      }
+    };
+
+    const setOpen = (open, opts) => {
+      const restoreFocus = !opts || opts.restoreFocus !== false;
+      nav.classList.toggle('is-open', open);
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? 'Close' : 'Menu';
+      inertTargets().forEach((el) => {
+        if (open) el.setAttribute('inert', '');
+        else el.removeAttribute('inert');
+      });
+      lockScroll(open && MQ.matches);
+      if (!open && restoreFocus) btn.focus();
+    };
+
+    const close = (opts) => {
+      if (!nav.classList.contains('is-open')) return;
+      setOpen(false, opts);
+    };
+
+    btn.addEventListener('click', () => {
+      setOpen(!nav.classList.contains('is-open'));
     });
+
+    nav.addEventListener('click', (e) => {
+      if (e.target.closest('a')) close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.classList.contains('is-open')) return;
+      if (header && header.contains(e.target)) return;
+      close();
+    });
+
+    const onBreakpoint = () => {
+      if (!MQ.matches) close({ restoreFocus: false });
+    };
+    if (MQ.addEventListener) MQ.addEventListener('change', onBreakpoint);
+    else if (MQ.addListener) MQ.addListener(onBreakpoint);
   })();
 </script>

@@ -5,23 +5,47 @@ section: pbs
 title: "PBS Series · Journeys of an Artist · Gene Canning"
 ---
 {% set pbs = pages['/pbs-tvs-journeys-of-an.html'] %}
+{# Intro = lead + promo note + WPBS link; rest = episode list after the videos. #}
+{% set introParas = pbs.paragraphs.slice(0, 3) %}
+{% set episodeParas = pbs.paragraphs.slice(3) %}
 <div class="wrap page-intro">
   <p class="label">PBS Television Series</p>
   <h1>{{ pbs.title or "Journeys of an Artist" }}</h1>
-  <div class="prose" style="margin-bottom: 48px;">
-    {% for p in pbs.paragraphs %}
+  <div class="prose" style="margin-bottom: 32px;">
+    {% for p in introParas %}
+      {% if "wpbstv.org" in p %}
+        <p>WPBS’s website is <a href="https://www.wpbstv.org" rel="noopener noreferrer">https://www.wpbstv.org</a>.</p>
+      {% else %}
+        <p>{{ p }}</p>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% if pbs.videos.length %}
+  <div class="video-grid">
+    {% for v in pbs.videos %}
+      <div class="video-wrap">
+        <iframe
+          src="{{ v }}"
+          title="Journeys of an Artist video {{ loop.index }}"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="{% if loop.first %}eager{% else %}lazy{% endif %}"></iframe>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if episodeParas.length %}
+  <div class="prose" style="margin: 48px 0;">
+    {% for p in episodeParas %}
       <p>{{ p }}</p>
     {% endfor %}
   </div>
-  {% for v in pbs.videos %}
-    <div class="video-embed gc-mat" style="padding: 0; margin-bottom: 32px; max-width: 900px;">
-      <div class="video-embed">
-        <iframe src="{{ v }}" title="Journeys of an Artist video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
-  {% endfor %}
+  {% endif %}
+
   {% for img in pbs.images %}
-    <figure class="gc-mat" style="margin: 0 0 24px; max-width: 640px;">
+    <figure class="gc-mat narrative-figure" style="margin: 0 0 24px;">
       {{ img.file | displayImg(img.alt or "PBS series") | safe }}
     </figure>
   {% endfor %}

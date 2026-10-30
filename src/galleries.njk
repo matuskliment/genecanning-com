@@ -7,28 +7,15 @@ permalink: "{{ gallery.path }}"
 layout: base.njk
 eleventyComputed:
   title: "{{ gallery.title }} · Gene Canning"
+  season: "{% if gallery.series == 'spring-season-paintings' %}spring{% elif gallery.series == 'summer-season-paintings' %}summer{% elif gallery.series == 'fall-season-paintings' %}fall{% elif gallery.series == 'winter-season-paintings' %}winter{% endif %}"
 ---
 {% set isThomson = gallery.path.indexOf('tom-thomson') >= 0 %}
-{% set seasonName = "" %}
-{% if gallery.series == "spring-season-paintings" %}{% set seasonName = "spring" %}
-{% elif gallery.series == "summer-season-paintings" %}{% set seasonName = "summer" %}
-{% elif gallery.series == "fall-season-paintings" %}{% set seasonName = "fall" %}
-{% elif gallery.series == "winter-season-paintings" %}{% set seasonName = "winter" %}
-{% endif %}
-{% if gallery.series == "prints" %}
-  {% set section = "prints" %}
-{% elif isThomson %}
-  {% set section = "thomson" %}
-{% else %}
-  {% set section = "paintings" %}
-{% endif %}
-
-{% if seasonName %}
-<script>document.body.setAttribute("data-season", "{{ seasonName }}");</script>
-{% endif %}
+{% set seasonName = season or "" %}
+{% set galleryId = gallery.series or (gallery.path | slugFromPath) %}
 
 <div class="wrap page-intro">
   <h1>{{ gallery.title }}</h1>
+  <span class="gc-knife{% if seasonName %} gc-knife--lake{% endif %}" aria-hidden="true"></span>
   {% if isThomson %}
   <nav class="season-tabs" aria-label="Tom Thomson seasons">
     <a href="/on-the-trail-of-tom-thomson/spring-season-paintings/" {% if seasonName == "spring" %}aria-current="page"{% endif %}>Spring</a>
@@ -40,9 +27,15 @@ eleventyComputed:
     <a href="/on-the-trail-of-tom-thomson/videos-from-the-trail/" {% if gallery.series == "videos-from-the-trail" %}aria-current="page"{% endif %}>Videos</a>
   </nav>
   {% endif %}
-  {% if gallery.intro and gallery.intro.length %}
-  <div class="prose lede">
-    {% for p in gallery.intro %}<p>{{ p }}</p>{% endfor %}
+  {% set introParas = gallery.intro %}
+  {% if (not introParas or introParas.length == 0) and pages[gallery.path] %}
+    {% set introParas = pages[gallery.path] | galleryIntroParas %}
+  {% endif %}
+  {% if introParas and introParas.length %}
+  <div class="prose gallery-note gc-prose">
+    {% for p in introParas %}
+      <p>{{ p | linkContactUs | safe }}</p>
+    {% endfor %}
   </div>
   {% endif %}
 </div>
@@ -54,10 +47,30 @@ eleventyComputed:
 {% endif %}
 
 <div class="wrap">
-  <div class="gc-grid" data-gc-gallery>
+  {% if gallery.series != "photos-from-the-trail" and gallery.series != "videos-from-the-trail" %}
+  <div class="gc-filter" role="group" aria-label="Show"
+       data-gc-filter-for="{{ galleryId }}" data-gc-filter-key="status" hidden>
+    <span class="gc-filter-label">Show:</span>
+    <button type="button" data-gc-filter="all" aria-pressed="true">All</button>
+    <button type="button" data-gc-filter="available" aria-pressed="false">Available</button>
+    <button type="button" data-gc-filter="sold" aria-pressed="false">Sold</button>
+    <button type="button" data-gc-filter="private" aria-pressed="false">Private</button>
+    <button type="button" data-gc-filter="artist" aria-pressed="false">Artist</button>
+  </div>
+  <div class="gc-filter" role="group" aria-label="Medium"
+       data-gc-filter-for="{{ galleryId }}" data-gc-filter-key="medium" hidden>
+    <span class="gc-filter-label">Medium:</span>
+    <button type="button" data-gc-filter="all" aria-pressed="true">All</button>
+    <button type="button" data-gc-filter="oil" aria-pressed="false">Oil</button>
+    <button type="button" data-gc-filter="acrylic" aria-pressed="false">Acrylic</button>
+    <button type="button" data-gc-filter="graphite" aria-pressed="false">Graphite</button>
+  </div>
+  <p class="gc-filter-count" data-gc-filter-count-for="{{ galleryId }}" aria-live="polite"></p>
+  {% endif %}
+
+  <div id="{{ galleryId }}" class="gc-grid" data-gc-gallery>
     {% for art in items %}
-      {% set eager = loop.first %}
-      {% include "gallery-card.njk" %}
+      {% galleryCard art, loop.first %}
     {% endfor %}
   </div>
 </div>

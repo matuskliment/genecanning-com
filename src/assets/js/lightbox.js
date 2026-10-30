@@ -44,7 +44,8 @@ export function initLightbox() {
       if (!card || !gallery.contains(card)) return;
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       e.preventDefault();
-      const items = [...gallery.querySelectorAll('[data-gc-item]')];
+      // Only the cards currently showing (gallery filters may hide some).
+      const items = [...gallery.querySelectorAll('[data-gc-item]')].filter((c) => !c.hidden);
       open(items, items.indexOf(card));
     });
   }
@@ -148,8 +149,13 @@ function fill(card) {
   els.status.textContent = d.gcStatus || '';
   els.status.hidden = !d.gcStatus;
   els.status.classList.toggle('gc-sold', card.hasAttribute('data-gc-sold'));
-  els.enquire.href = d.gcEnquire || '/contact-gene.html';
+  const enquireHref = d.gcEnquire || '';
+  els.enquire.hidden = !enquireHref;
+  if (enquireHref) els.enquire.href = enquireHref;
   els.page.href = card.getAttribute('href') || '#';
+  els.page.textContent = card.classList.contains('gc-card') && card.querySelector('.gc-photo')
+    ? 'Photo page'
+    : 'Painting page';
   els.counter.textContent = `${i + 1} of ${n}`;
   els.prev.hidden = i === 0;
   els.next.hidden = i === n - 1;
@@ -283,14 +289,12 @@ async function close() {
 
   const card = state.items[state.index];
   const thumb = thumbOf(card);
+  // While scroll is locked, don't scrollIntoView — it fights unlock restore.
+  // FLIP only when the thumb is already on screen; otherwise fade out.
+  const to = thumb?.getBoundingClientRect();
+  const canFlip = !reducedMotion() && thumb && to && inView(to);
 
-  if (!reducedMotion() && thumb) {
-    // Bring the painting's own spot into view so it can return to it.
-    let to = thumb.getBoundingClientRect();
-    if (!inView(to)) {
-      card.scrollIntoView({ block: 'center', behavior: 'instant' });
-      to = thumb.getBoundingClientRect();
-    }
+  if (canFlip) {
     const end = flipFrom(to);
     hideThumb(card);
     await Promise.all([
@@ -304,10 +308,19 @@ async function close() {
         { transform: end, boxShadow: '0 0 0 rgba(0,0,0,0)' },
       ], { duration: TIMING.close, easing: 'cubic-bezier(.4, 0, .6, 1)', fill: 'forwards' }),
     ]);
+  } else if (!reducedMotion()) {
+    await Promise.all([
+      animate(dialog, [{ opacity: 1 }, { opacity: 0 }], { duration: TIMING.close, easing: 'ease-in', fill: 'forwards' }),
+    ]);
   }
 
   dialog.close();
   cleanup();
+  // After unlock restored the open scroll position: if we closed on a card
+  // that was off-screen (Next/Prev), bring it into view once, instantly.
+  if (thumb && !inView(thumb.getBoundingClientRect())) {
+    card.scrollIntoView({ block: 'center', behavior: 'instant' });
+  }
   card.focus({ preventScroll: true });
 }
 
@@ -319,8 +332,9 @@ function cleanup() {
   showThumb();
   lockScroll(false);
   // Clear any held animation end-states so the next open starts clean.
-  for (const el of [els.wall, els.bar, els.info, els.prev, els.next, els.img]) {
+  for (const el of [dialog, els.wall, els.bar, els.info, els.prev, els.next, els.img]) {
     el.getAnimations().forEach((a) => a.cancel());
   }
+  dialog.style.opacity = '';
   if (dialog.open) dialog.close();
 }

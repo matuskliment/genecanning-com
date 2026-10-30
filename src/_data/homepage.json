@@ -8,7 +8,7 @@
   "thomsonTeaser": {
     "label": "The Centenary Project · 1912–1917",
     "title": "On the Trail of Tom Thomson, 100 Years Later",
-    "body": "A multi-year journey paddling and painting in Algonquin Park — celebrating Tom Thomson as an outdoorsman, and changing Gene forever as an artist.",
+    "body": "“On the Trail of Tom Thomson, 100 Years Later” was my way of exploring his art and his way of working. It was completed in an effort to recognize and appreciate Tom Thomson as an outdoorsman. Paddling and painting his way into history all those years ago. As author David Wilcox said to me,” …it will end being more of a journey about you, than about Thomson” and he how right he was! It changed me forever as an artist. I’d like to think for the better. One way, or the other, that project and the time I spent in Algonquin has had a major impact me as well as on my art.",
     "cta": "Read the story of the project",
     "ctaHref": "/on-the-trail-of-tom-thomson/project-overview.html",
     "photoCaption": "On the trail, with canoe, fly rod and paint box."
@@ -17,23 +17,26 @@
     {
       "href": "/original-paintings/african-wildlife/",
       "title": "African Wildlife",
-      "meta": "Oil, acrylic and graphite"
+      "meta": "Oil, acrylic and graphite",
+      "coverSlug": "leaving-the-pride-12-x-24"
     },
     {
       "href": "/original-paintings/north-american-wildlife/",
       "title": "North American Wildlife",
-      "meta": "Oil and graphite"
+      "meta": "Oil and graphite",
+      "coverSlug": "morning-mist-and-moose"
     },
     {
       "href": "/original-paintings/various-paintings/",
       "title": "Various Paintings",
-      "meta": "Portraits, dogs, canoes, landscapes"
+      "meta": "Portraits, dogs, canoes, landscapes",
+      "coverSlug": "evening-walk-in-the-woods"
     }
   ],
   "pbsTeaser": {
     "label": "PBS Television Series",
     "title": "Journeys of an Artist",
-    "body": "A 13-episode series following Gene’s work and travels. Episode 13 reviews the seasons — watch it on the PBS page.",
+    "body": "Thirteen half-hour episodes travelling with renowned artists to the places that inspire them, from the Ngorongoro Crater to Algonquin Park.",
     "cta": "About the series and episodes",
     "ctaHref": "/pbs-tvs-journeys-of-an.html"
   }

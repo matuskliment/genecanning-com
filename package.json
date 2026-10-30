@@ -5,7 +5,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "eleventy",
+    "palettes": "node scripts/build-palettes.mjs",
+    "build": "npm run palettes && eleventy",
     "start": "eleventy --serve",
     "extract": "node scripts/extract-content.mjs",
     "qa": "node scripts/qa-urls.mjs"

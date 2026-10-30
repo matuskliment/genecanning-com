@@ -1,16 +1,6 @@
 [
   {
     "type": "caption-parse",
-    "path": "/on-the-trail-of-tom-thomson/studio-paintings/alqonquin-alligator-28-x-40.html",
-    "caption": "Alqonquin Alligator 28\" x 40\" Mixed Media on Board $4500",
-    "parsed": {
-      "title": "Alqonquin Alligator Mixed Media on Board",
-      "medium": "",
-      "size": "28x40"
-    }
-  },
-  {
-    "type": "caption-parse",
     "path": "/original-paintings/north-american-wildlife/operation-migration-to-save.html",
     "caption": "Operation Migration to Save a Species Oil on Birch Panel Private Collection",
     "parsed": {

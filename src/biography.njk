@@ -7,11 +7,12 @@ description: "Biography of artist Gene Canning, painter of the natural world, ba
 ---
 {% set bio = pages['/biography.html'] %}
 <div class="wrap page-intro">
-  <h1>{{ bio.title or "About Gene" }}</h1>
+  {# Nav label is "About Gene"; URL stays /biography.html (handoff: label only). #}
+  <h1>About Gene</h1>
   <div class="prose" style="margin-bottom: 64px;">
     {% for img in bio.images %}
-      <figure class="gc-mat" style="margin: 0 0 24px; max-width: 640px;">
-        {{ img.file | displayImg(img.alt or bio.title) | safe }}
+      <figure class="gc-mat narrative-figure">
+        {{ img.file | displayImg(img.alt or "Gene Canning") | safe }}
       </figure>
     {% endfor %}
     {% for p in bio.paragraphs %}

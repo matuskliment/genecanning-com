@@ -3,23 +3,131 @@ permalink: /on-the-trail-of-tom-thomson/index.html
 layout: base.njk
 section: thomson
 title: "Tom Thomson Project · Gene Canning"
+eleventyComputed:
+  description: "On the Trail of Tom Thomson, 100 Years Later — Gene Canning’s centenary journey paddling and painting through Algonquin Park."
 ---
-{% set pageData = pages['/on-the-trail-of-tom-thomson/index.html'] %}
-<div class="wrap page-intro">
-  <h1>{{ pageData.title or "On the Trail of Tom Thomson" }}</h1>
-  <nav class="season-tabs" aria-label="Tom Thomson sections">
-    {% for tab in navigation.thomson %}
-      <a href="{{ tab.href }}">{{ tab.label }}</a>
-    {% endfor %}
+{% set hub = thomsonHub %}
+{% set springArts = artworks | bySeries("spring-season-paintings") %}
+{% set summerArts = artworks | bySeries("summer-season-paintings") %}
+{% set fallArts = artworks | bySeries("fall-season-paintings") %}
+{% set winterArts = artworks | bySeries("winter-season-paintings") %}
+{% set studioArts = artworks | bySeries("studio-paintings") %}
+{% set paintingCount = springArts.length + summerArts.length + fallArts.length + winterArts.length + studioArts.length %}
+{% set photoCount = photos.length %}
+{% set videosPage = pages["/on-the-trail-of-tom-thomson/videos-from-the-trail/index.html"] %}
+{% set videoCount = videosPage.videos.length if videosPage and videosPage.videos else 0 %}
+
+<section class="trailhead wrap" aria-labelledby="trailhead-h">
+  <div class="trailhead-hero gc-hero"
+       style="--title-x: {{ hub.heroTitleX }}; --title-y: {{ hub.heroTitleY }}; --title-size: {{ hub.heroTitleSize }}">
+    <figure class="gc-hero-frame trailhead-hero-frame"{% if hub.heroObjectPosition %} style="--hero-pos: {{ hub.heroObjectPosition }}"{% endif %}>
+      {% heroPhoto hub.heroImage, hub.heroAlt %}
+    </figure>
+    <div class="trailhead-hero-copy">
+      <p class="trailhead-label">{{ hub.label }}</p>
+      <h1 id="trailhead-h" class="trailhead-title">{{ hub.titleHtml | safe }}</h1>
+    </div>
+  </div>
+
+  <nav class="season-tabs trailhead-tabs" aria-label="Tom Thomson sections">
+    <p class="trailhead-tabs-label">Explore</p>
+    <div class="trailhead-tabs-links">
+      {% for tab in navigation.thomson %}
+        <a class="gc-pencil" href="{{ tab.href }}">{{ tab.label }}</a>
+      {% endfor %}
+    </div>
   </nav>
-  <div class="prose" style="margin-bottom: 64px;">
-    {% for img in pageData.images %}
-      <figure class="gc-mat" style="margin: 0 0 24px; max-width: 720px;">
-        {{ img.file | displayImg(img.alt or pageData.title) | safe }}
-      </figure>
-    {% endfor %}
-    {% for p in pageData.paragraphs %}
-      <p>{{ p }}</p>
+
+  <div class="trailhead-intro">
+    <div class="trailhead-note">
+      {% for p in hub.fieldNote %}
+        <p>{{ p }}</p>
+      {% endfor %}
+      <p class="trailhead-signoff">Enjoy the journey with me. — Gene</p>
+      <p><a class="gc-btn" href="{{ hub.ctaHref }}">{{ hub.cta }}</a></p>
+    </div>
+    <aside class="trailhead-ledger" aria-labelledby="trail-ledger-h">
+      <h2 id="trail-ledger-h">{{ hub.ledgerTitle }}</h2>
+      <ul>
+        <li>Three years paddling and painting in Algonquin</li>
+        <li>{{ paintingCount }} field and studio paintings</li>
+        <li>{{ photoCount }} photos and {{ videoCount }} videos from the trail</li>
+        <li>Field studies become studio canvases</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap trailhead-seasons" aria-labelledby="trail-seasons-h">
+  <h2 id="trail-seasons-h">{{ hub.seasonsTitle }}</h2>
+  <span class="gc-knife" aria-hidden="true"></span>
+  <div class="trailhead-season-grid">
+    {% for s in hub.seasons %}
+      {% set cover = artworks | findBySlug(s.coverSlug) %}
+      {% if not cover %}
+        {% set cover = (artworks | bySeries(s.series))[0] %}
+      {% endif %}
+      {% set seasonArts = artworks | bySeries(s.series) %}
+      <a class="teaser-card trailhead-season" href="{{ s.href }}">
+        <span class="gc-mat teaser-mat">
+          {% if cover %}
+            {{ cover.image | thumbImg(s.label, loop.first) | safe }}
+          {% endif %}
+        </span>
+        <span class="gc-title">{{ s.label }}</span>
+        <span class="meta">{{ seasonArts.length }} paintings</span>
+      </a>
     {% endfor %}
   </div>
-</div>
+</section>
+
+<section class="wrap trailhead-continue" aria-labelledby="trail-continue-h">
+  <h2 id="trail-continue-h">{{ hub.continueTitle }}</h2>
+  <span class="gc-knife" aria-hidden="true"></span>
+  <ul class="trailhead-continue-list">
+    {% for item in hub.continue %}
+      <li>
+        <a class="trailhead-continue-row" href="{{ item.href }}">
+          {% if item.kind == "painting" %}
+            {% set cover = artworks | findBySlug(item.coverSlug) %}
+            {% if not cover and item.series %}
+              {% set cover = (artworks | bySeries(item.series))[0] %}
+            {% endif %}
+            <span class="gc-mat trailhead-continue-mat">
+              {% if cover %}
+                {{ cover.image | thumbImg(item.title, false) | safe }}
+              {% endif %}
+            </span>
+          {% elif item.photoSlug %}
+            {% set photo = photos | findBySlug(item.photoSlug) %}
+            <span class="gc-photo trailhead-continue-photo">
+              {% if photo %}
+                {{ photo.image | thumbImg(item.title, false) | safe }}
+              {% endif %}
+            </span>
+          {% elif item.image %}
+            <span class="gc-photo trailhead-continue-photo">
+              {{ item.image | thumbImg(item.imageAlt or item.title, false) | safe }}
+            </span>
+          {% endif %}
+          <span class="trailhead-continue-text">
+            <span class="gc-title">{{ item.title }}</span>
+            <span class="meta">{{ item.blurb }}</span>
+          </span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="wrap trailhead-craft" aria-labelledby="trail-craft-h">
+  <h2 id="trail-craft-h" class="label">{{ hub.craft.title }}</h2>
+  <div class="trailhead-craft-strip">
+    {% for img in hub.craft.images %}
+      <figure class="gc-photo trailhead-craft-fig">
+        {{ img.file | displayImg(img.alt) | safe }}
+      </figure>
+    {% endfor %}
+  </div>
+  <p class="caption">{{ hub.craft.caption }}</p>
+</section>

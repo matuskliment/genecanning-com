@@ -1,0 +1,88 @@
+{
+  "label": "The Centenary Project · 1912–1917",
+  "title": "On the Trail of Tom Thomson",
+  "titleHtml": "On the Trail of<br> Tom Thomson",
+  "heroImage": "img_2982.jpeg",
+  "heroAlt": "Canoe as a painting table on the trail in Algonquin Park",
+  "heroTitleX": "4%",
+  "heroTitleY": "8%",
+  "heroTitleSize": "4.2cqw",
+  "heroObjectPosition": "50% 40%",
+  "fieldNote": [
+    "“On the Trail of Tom Thomson, 100 Years Later” was my way of exploring his art and his way of working — paddling and painting his way into history all those years ago.",
+    "As author David Silcox said to me, it would end up being more of a journey about me than about Thomson. How right he was. That time in Algonquin changed me forever as an artist."
+  ],
+  "cta": "Read the story of the project",
+  "ctaHref": "/on-the-trail-of-tom-thomson/project-overview.html",
+  "ledgerTitle": "On this trail",
+  "seasonsTitle": "Explore by season",
+  "seasons": [
+    {
+      "label": "Spring",
+      "href": "/on-the-trail-of-tom-thomson/spring-season-paintings/",
+      "series": "spring-season-paintings",
+      "coverSlug": "canoe-lake-early-spring-1st"
+    },
+    {
+      "label": "Summer",
+      "href": "/on-the-trail-of-tom-thomson/summer-season-paintings/",
+      "series": "summer-season-paintings",
+      "coverSlug": "sunset-grand-lake-on-wood"
+    },
+    {
+      "label": "Fall",
+      "href": "/on-the-trail-of-tom-thomson/fall-season-paintings/",
+      "series": "fall-season-paintings",
+      "coverSlug": "maple-on-fire-oil-on-wood"
+    },
+    {
+      "label": "Winter",
+      "href": "/on-the-trail-of-tom-thomson/winter-season-paintings/",
+      "series": "winter-season-paintings",
+      "coverSlug": "winter-road-on-wood-panel"
+    }
+  ],
+  "continueTitle": "Continue the trail",
+  "continue": [
+    {
+      "id": "studio",
+      "title": "Studio paintings",
+      "href": "/on-the-trail-of-tom-thomson/studio-paintings/",
+      "blurb": "Larger canvases developed from studies painted in the field.",
+      "kind": "painting",
+      "coverSlug": "brigham-falls-36-x-48-oil",
+      "series": "studio-paintings"
+    },
+    {
+      "id": "photos",
+      "title": "Photos from the Trail",
+      "href": "/on-the-trail-of-tom-thomson/photos-from-the-trail/",
+      "blurb": "Places, camps, and history along the canoe routes.",
+      "kind": "photo",
+      "image": "my-canoe-loaded-on-big.jpeg",
+      "imageAlt": "Canoe loaded for a trip on the trail"
+    },
+    {
+      "id": "videos",
+      "title": "Videos from the Trail",
+      "href": "/on-the-trail-of-tom-thomson/videos-from-the-trail/",
+      "blurb": "TEDx, ice canoeing, painting on location, and more.",
+      "kind": "photo",
+      "photoSlug": "tour-of-mowat-cemetery"
+    }
+  ],
+  "craft": {
+    "title": "How each painting is framed",
+    "caption": "Field paintings measure 8″ × 10″ unframed. Each is framed in the frame shown here. The verso is signed, titled, dated, and carries Thomson project information.",
+    "images": [
+      {
+        "file": "tt-frame-_med_hr.jpeg",
+        "alt": "Framed Tom Thomson project painting"
+      },
+      {
+        "file": "tt-frame-close-up_med_hr.jpeg",
+        "alt": "Close-up of the painting frame"
+      }
+    ]
+  }
+}

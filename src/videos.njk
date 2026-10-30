@@ -5,7 +5,12 @@ section: thomson
 title: "Videos from the Trail · Gene Canning"
 ---
 {% set pageData = pages['/on-the-trail-of-tom-thomson/videos-from-the-trail/index.html'] %}
+{% set note = pageData.paragraphs[0] %}
+{% set captions = pageData.paragraphs.slice(1) if pageData.paragraphs else [] %}
+
 <div class="wrap page-intro">
+  <h1>{{ pageData.title or "Videos from the Trail" }}</h1>
+  <span class="gc-knife" aria-hidden="true"></span>
   <nav class="season-tabs" aria-label="Tom Thomson seasons">
     <a href="/on-the-trail-of-tom-thomson/spring-season-paintings/">Spring</a>
     <a href="/on-the-trail-of-tom-thomson/summer-season-paintings/">Summer</a>
@@ -15,15 +20,35 @@ title: "Videos from the Trail · Gene Canning"
     <a href="/on-the-trail-of-tom-thomson/photos-from-the-trail/">Photos</a>
     <a href="/on-the-trail-of-tom-thomson/videos-from-the-trail/" aria-current="page">Videos</a>
   </nav>
-  <h1>{{ pageData.title or "Videos from the Trail" }}</h1>
-  <div class="prose">
-    {% for p in pageData.paragraphs %}<p>{{ p }}</p>{% endfor %}
-  </div>
+  {% if note %}
+  <p class="gallery-note">{{ note }}</p>
+  {% endif %}
+</div>
+
+<div class="wrap trail-videos">
   {% for v in pageData.videos %}
-    <div class="gc-mat" style="padding: 0; margin: 24px 0 48px; max-width: 900px;">
-      <div class="video-embed">
-        <iframe src="{{ v }}" title="Video from the Trail" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    {% set caption = captions[loop.index0] %}
+    <article class="trail-video">
+      {% if caption %}
+      <div class="prose gallery-note gc-prose">
+        <p>{{ caption }}</p>
       </div>
+      {% endif %}
+      <div class="video-wrap">
+        <iframe
+          src="{{ v }}"
+          title="Video from the Trail {{ loop.index }}"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="{% if loop.first %}eager{% else %}lazy{% endif %}"></iframe>
+      </div>
+    </article>
+  {% endfor %}
+  {% for p in captions %}
+    {% if loop.index0 >= pageData.videos.length %}
+    <div class="prose gallery-note gc-prose">
+      <p>{{ p }}</p>
     </div>
+    {% endif %}
   {% endfor %}
 </div>

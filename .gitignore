@@ -3,6 +3,7 @@ _site/
 .cache/
 .DS_Store
 .tmp-design/
+.tmp-kit/
 img/.cache/
 *.log
 .env

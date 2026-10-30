@@ -2,18 +2,24 @@
 title: "On the Trail of Tom Thomson"
 ---
 
-On the Trail of Tom Thomson, 100 Years Later
+# On the Trail of Tom Thomson
 
-This folder of the website explores Gene’s three years journey retracing the trails of Canadian iconic artist Tom Thomson and his time in Canada’s Algonquin Park. This journey isn’t just about Thomson, it is also about Gene and his experiences in art. What he learned and observed along the way.
+The Centenary Project · 1912–1917
 
-The tabs are divided up into folders.
+“On the Trail of Tom Thomson, 100 Years Later” was my way of exploring his art and his way of working — paddling and painting his way into history all those years ago.
 
-1. Project Overview
+As author David Silcox said to me, it would end up being more of a journey about me than about Thomson. How right he was. That time in Algonquin changed me forever as an artist.
 
-2. Field paintings related to various seasons. Note, not all paintings have been shown.
+Enjoy the journey with me. — Gene
 
-3. Studio paintings completed based on paintings done in the field
+## Explore
 
-4. Links to videos of his travels
+- Project Overview — the story of the three-year journey
+- Spring, Summer, Fall, Winter — field paintings by season
+- Studio paintings — larger canvases from field studies
+- Photos from the Trail
+- Videos from the Trail
 
-Sample of how each painting is framed
+## Craft
+
+Field paintings measure 8″ × 10″ unframed. Each is framed in the frame shown here. The verso is signed, titled, dated, and carries Thomson project information.

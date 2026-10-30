@@ -9,6 +9,7 @@ section: thomson
 eleventyComputed:
   title: "{{ art.title }} · Photos from the Trail · Gene Canning"
   description: "{{ art.title }} — photo from Gene Canning’s Tom Thomson project."
+  ogImage: "{{ art.image | ogImageUrl }}"
 ---
 <div class="wrap page-intro">
   <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -17,8 +18,8 @@ eleventyComputed:
   </nav>
   <h1>{{ art.title }}</h1>
 </div>
-<div class="wrap" style="max-width: 960px; margin-bottom: 64px;">
-  <figure class="gc-mat">
+<div class="wrap photo-page">
+  <figure class="gc-photo">
     {{ art.image | displayImg(art.title) | safe }}
   </figure>
 </div>
