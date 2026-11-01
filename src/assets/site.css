@@ -340,6 +340,38 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
 .gc-filter-count {
   margin: 0 0 32px;
 }
+@media (max-width: 700px) {
+  .gc-filter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .gc-filter-label {
+    margin: 0;
+  }
+  .gc-filter-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .gc-filter button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    padding: 0 12px;
+    font-size: 16px;
+  }
+  /* Odd leftover chip spans the row instead of sitting half-empty. */
+  .gc-filter-options > button:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+  .gc-filter-count {
+    margin: 4px 0 28px;
+  }
+}
 .facts {
   display: grid;
   grid-template-columns: max-content 1fr;
