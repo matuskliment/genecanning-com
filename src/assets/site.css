@@ -78,18 +78,20 @@ summary:focus-visible {
   outline-offset: 3px;
 }
 
+/* Page gutters — keep horizontal padding on .wrap even when a section
+   also sets vertical padding (padding shorthand would wipe the sides). */
+:root {
+  --gc-gutter: 28px;
+}
+@media (min-width: 901px) {
+  :root { --gc-gutter: 24px; }
+}
 .wrap {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
-  padding-left: max(24px, env(safe-area-inset-left, 0px));
-  padding-right: max(24px, env(safe-area-inset-right, 0px));
-}
-@media (max-width: 900px) {
-  .wrap {
-    padding-left: max(22px, env(safe-area-inset-left, 0px));
-    padding-right: max(22px, env(safe-area-inset-right, 0px));
-  }
+  padding-block: 0;
+  padding-inline: max(var(--gc-gutter), env(safe-area-inset-left, 0px))
+    max(var(--gc-gutter), env(safe-area-inset-right, 0px));
 }
 .prose { max-width: 68ch; }
 .prose a { text-decoration: underline; }
@@ -472,11 +474,11 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 40px;
-  padding: 48px 0 32px;
+  padding-block: 48px 32px;
   align-items: start;
 }
 @media (max-width: 700px) {
-  .home-hero { grid-template-columns: 1fr; padding-top: 28px; }
+  .home-hero { grid-template-columns: 1fr; padding-block-start: 28px; }
 }
 .home-hero .caption {
   font: 15px/1.4 var(--gc-sans);
@@ -487,7 +489,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   display: flex;
   flex-wrap: wrap;
   gap: 12px 28px;
-  padding: 20px 0;
+  padding-block: 20px;
   margin: 8px 0 40px;
   border-top: 1px solid var(--gc-birch);
   border-bottom: 1px solid var(--gc-birch);
@@ -503,7 +505,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 40px;
-  padding: 48px 0;
+  padding-block: 48px;
   align-items: center;
   border-top: 1px solid var(--gc-birch);
 }
@@ -514,7 +516,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   .home-section--flip {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 32px 0;
+    padding-block: 32px;
   }
   .home-section--flip .home-section__text { order: 0; }
 }
@@ -585,7 +587,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   margin-top: 96px;
   background: var(--gc-lake);
   color: var(--gc-gesso);
-  padding: 40px 0;
+  padding-block: 40px;
   padding-bottom: max(40px, env(safe-area-inset-bottom, 0px));
   font-family: var(--gc-sans);
 }
@@ -614,15 +616,16 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   margin-top: 4px;
 }
 
-.page-intro { padding: 40px 0 8px; }
+.page-intro { padding-block: 40px 8px; }
 @media (max-width: 700px) {
-  .page-intro { padding: 24px 0 8px; }
+  .page-intro { padding-block: 28px 8px; }
   .page-intro .lede {
     font-size: 18px;
     max-width: 36em;
   }
   .teaser-card .gc-title { font-size: 20px; }
   .gc-mat { padding: 14px; }
+  h1 { font-size: clamp(30px, 8vw, 40px); }
 }
 .page-intro .lede {
   font-size: 19px;
@@ -631,7 +634,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
 }
 
 /* Thomson Trailhead hub */
-.trailhead { padding: 32px 0 8px; }
+.trailhead { padding-block: 32px 8px; }
 .trailhead-hero { margin-bottom: 8px; }
 .trailhead-hero-frame { aspect-ratio: 2 / 1; }
 .trailhead-hero-frame .gc-hero-photo {
@@ -665,7 +668,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   align-items: stretch;
   gap: 14px;
   margin: 36px 0 0;
-  padding: 8px 0 28px;
+  padding-block: 8px 28px;
   border-bottom: 1px solid var(--gc-birch);
 }
 .trailhead-tabs-label {
@@ -746,7 +749,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
 .trailhead-seasons,
 .trailhead-continue,
 .trailhead-craft {
-  padding: 40px 0 8px;
+  padding-block: 40px 8px;
   border-top: 1px solid var(--gc-birch);
   margin-top: 24px;
 }
@@ -871,7 +874,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
 }
 
 @media (max-width: 700px) {
-  .trailhead { padding-top: 20px; }
+  .trailhead { padding-block-start: 20px; }
   .trailhead-hero-frame {
     aspect-ratio: 4 / 3;
   }
@@ -892,15 +895,15 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   .trailhead-title br { display: none; }
   .trailhead-tabs {
     margin-top: 24px;
-    padding-bottom: 20px;
+    padding-block-end: 20px;
     gap: 10px;
   }
   .trailhead-tabs-links {
-    gap: 4px 18px;
+    gap: 8px 20px;
   }
   .trailhead-tabs a {
     min-height: 44px;
-    padding: 8px 0;
+    padding-block: 8px;
   }
   .trailhead-intro { margin-top: 28px; gap: 28px; }
   .trailhead-note {
@@ -922,7 +925,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   .trailhead-continue-row {
     grid-template-columns: 100px 1fr;
     gap: 16px;
-    padding: 16px 0;
+    padding-block: 16px;
   }
   .trailhead-continue-mat,
   .trailhead-continue-photo { width: 100px; }
