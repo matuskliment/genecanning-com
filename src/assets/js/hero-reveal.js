@@ -19,7 +19,7 @@
  *               data-label-photo="See what I painted here"
  *               data-label-painting="Back to the photo"><span class="gc-btn-label">See what I painted here</span></button>
  *     </figure>
- *     <h1 class="gc-hero-title">Hello, I am<br> Gene Canning…</h1>
+ *     <h1 class="gc-hero-title">Gene Canning</h1>
  *   </div>
  */
 

@@ -4,7 +4,7 @@ layout: false
 permalink: false
 ---
 
-Hello, I am Gene Canning…
+Gene Canning
 
 Welcome to my website. You will see a variety of painting subjects and styles. I find it hard to restrict myself to only one theme and so… for better or worse... I don’t.
 
