@@ -39,9 +39,9 @@ Re-run `npm run extract` after updating the mirror, then spot-check warnings. Wh
 
 ## Motion kit
 
-`src/assets/gc-motion.css` and `src/assets/js/` come from the Oct 28 gc-kit (hero reveal, gallery filters, linen mats, pencil underlines, palette dabs). Compare markup to `.tmp-kit/examples/` locally. Run `npm run palettes` before build (also hooked into `npm run build`) to sample painting colours into `src/_data/palettes.json`.
+`src/assets/gc-motion.css` and `src/assets/js/` come from the Oct 28 gc-kit (gallery filters, linen mats, pencil underlines, palette dabs). Compare markup to `.tmp-kit/examples/` locally. Run `npm run palettes` before build (also hooked into `npm run build`) to sample painting colours into `src/_data/palettes.json`.
 
-Homepage hero photo: `siteImages.homeHero` (Gene painting in winter, fixed). “See what I painted here” picks a random landscape Tom Thomson painting (portrait files excluded); `heroRevealSlug` is the no-JS fallback.
+Homepage hero photo: `siteImages.homeHero` (Gene painting in winter, fixed).
 
 ## Notes for Mat
 

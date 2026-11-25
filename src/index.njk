@@ -8,21 +8,12 @@ eleventyComputed:
   ogImage: "{{ siteImages.homeHero | ogImageUrl }}"
 ---
 {% set home = pages['/index.html'] %}
-{% set reveal = artworks | findBySlug(siteImages.heroRevealSlug) %}
-
-<script type="application/json" id="gc-hero-reveal-pool">{% heroRevealPoolJson artworks %}</script>
 
 <section class="gc-intro wrap" aria-labelledby="welcome-h">
-  <div class="gc-hero" data-gc-hero
+  <div class="gc-hero"
        style="--title-x: {{ siteImages.heroTitleX }}; --title-y: {{ siteImages.heroTitleY }}; --title-size: {{ siteImages.heroTitleSize }}">
     <figure class="gc-hero-frame gc-hero-frame--home">
       {% heroPhoto siteImages.homeHero, siteImages.homeHeroAlt or siteImages.homeHeroCaption %}
-      {% if reveal %}
-      {% heroRevealImg reveal %}
-      <button type="button" class="gc-hero-btn" data-gc-hero-toggle hidden
-              data-label-photo="See what I painted here"
-              data-label-painting="Back to the photo"><span class="gc-btn-label">See what I painted here</span></button>
-      {% endif %}
     </figure>
     <h1 id="welcome-h" class="gc-hero-title">Gene Canning</h1>
   </div>
@@ -32,11 +23,12 @@ eleventyComputed:
       {% if home.paragraphs[1] %}<p>{{ home.paragraphs[1] }}</p>{% endif %}
       {% if home.paragraphs[2] %}<p>{{ home.paragraphs[2] }}</p>{% endif %}
       {% if home.paragraphs[5] %}<p>{{ home.paragraphs[5] }}</p>{% endif %}
+      {% if home.paragraphs[6] %}<p>{{ home.paragraphs[6] }}</p>{% endif %}
       <p style="font-size: 22px; font-style: italic; color: var(--gc-lake)">Enjoy the journey with me. — Gene</p>
-      <p style="font: 600 18px var(--gc-sans)"><a class="gc-pencil" href="{{ homepage.thomsonTeaser.ctaHref }}">{{ homepage.thomsonTeaser.cta }}</a></p>
     </div>
     <div class="gc-recognition">
       <h2>Recognition</h2>
+      <span class="gc-knife" aria-hidden="true"></span>
       <ul>
         {% for item in homepage.recognition %}
           <li>{{ item }}</li>
@@ -59,15 +51,7 @@ eleventyComputed:
       <h2>{{ homepage.thomsonTeaser.title }}</h2>
       <span class="gc-knife" aria-hidden="true"></span>
       <p>{{ homepage.thomsonTeaser.body }}</p>
-      <div class="inline-links">
-        <a href="/on-the-trail-of-tom-thomson/spring-season-paintings/">Spring</a>
-        <a href="/on-the-trail-of-tom-thomson/summer-season-paintings/">Summer</a>
-        <a href="/on-the-trail-of-tom-thomson/fall-season-paintings/">Fall</a>
-        <a href="/on-the-trail-of-tom-thomson/winter-season-paintings/">Winter</a>
-        <a href="/on-the-trail-of-tom-thomson/studio-paintings/">Studio paintings</a>
-        <a href="/on-the-trail-of-tom-thomson/photos-from-the-trail/">Photos and videos</a>
-      </div>
-      <a class="gc-btn" href="{{ homepage.thomsonTeaser.ctaHref }}">{{ homepage.thomsonTeaser.cta }}</a>
+      <p><a class="gc-pencil" href="/on-the-trail-of-tom-thomson/">Discover more about Tom Thomson Project</a></p>
     </div>
   </section>
 

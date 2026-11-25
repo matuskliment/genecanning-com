@@ -1,9 +1,10 @@
 {
   "recognition": [
-    "Host of Journeys of an Artist on PBS",
-    "Work in Canada's permanent art collection",
-    "Featured artist, Algonquin Art Centre",
-    "Peterborough Pathway of Fame"
+    "Host of National PBS Television Program Journeys of an Artist",
+    "Painting permanently in the official residences of Canada",
+    "Painting on permanent display at the Algonquin Visitors Centre",
+    "Inducted into the Peterborough Pathway of Fame",
+    "Sponsorship to complete the Tom Thomson historical project"
   ],
   "thomsonTeaser": {
     "label": "The Centenary Project · 1912–1917",
@@ -37,7 +38,7 @@
     "label": "PBS Television Series",
     "title": "Journeys of an Artist",
     "body": "Thirteen half-hour episodes travelling with renowned artists to the places that inspire them, from the Ngorongoro Crater to Algonquin Park.",
-    "cta": "About the series and episodes",
+    "cta": "Discover more about series and episodes",
     "ctaHref": "/pbs-tvs-journeys-of-an.html"
   }
 }

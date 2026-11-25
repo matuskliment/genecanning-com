@@ -11,6 +11,7 @@ title: "PBS Series · Journeys of an Artist · Gene Canning"
 <div class="wrap page-intro">
   <p class="label">PBS Television Series</p>
   <h1>{{ pbs.title or "Journeys of an Artist" }}</h1>
+  <span class="gc-knife" aria-hidden="true"></span>
   <div class="prose" style="margin-bottom: 32px;">
     {% for p in introParas %}
       {% if "wpbstv.org" in p %}
@@ -39,7 +40,11 @@ title: "PBS Series · Journeys of an Artist · Gene Canning"
   {% if episodeParas.length %}
   <div class="prose" style="margin: 48px 0;">
     {% for p in episodeParas %}
-      <p>{{ p }}</p>
+      {% if loop.first %}
+        <p><strong>{{ p }}</strong></p>
+      {% else %}
+        <p>{{ p }}</p>
+      {% endif %}
     {% endfor %}
   </div>
   {% endif %}

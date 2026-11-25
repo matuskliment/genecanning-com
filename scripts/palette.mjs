@@ -2,7 +2,7 @@
 /**
  * "Colours in this painting" — build-time palette extraction.
  *
- * Samples each painting image and returns its 5 most characteristic colours,
+ * Samples each painting image and returns the distinct colours in it,
  * most prominent first, as hex. Run once per build (or when images change)
  * and store the result with each artwork record (field: `palette`).
  *
@@ -13,16 +13,19 @@
  *   import { palette } from './tools/palette.mjs';
  *   const colours = await palette('src/img/originals/treetop-leopard.jpg');
  *
- * Method: downsample to ~80px, k-means in Lab space (seeded, so results are
- * stable between builds), drop near-duplicates, sort by share of the image.
+ * Method: downsample, k-means in Lab space (seeded, so results are stable),
+ * then keep each distinct colour that covers a real part of the picture.
+ * The swatch is a pixel from the painting, not a blend of neighbouring colours.
  * Pure white/black specks under 3% of the picture are ignored.
  */
 
 import sharp from 'sharp';
 import { basename } from 'node:path';
 
-const K = 8;
-const KEEP = 5;
+const K = 16;
+const KEEP = 12;
+const MIN_SHARE = 0.012;
+const SAME_COLOUR = 9 ** 2;
 
 function srgbToLinear(c) { c /= 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; }
 function toLab([r, g, b]) {
@@ -43,7 +46,7 @@ function seeded(seed) { // mulberry32
 }
 
 export async function palette(file, keep = KEEP) {
-  const { data, info } = await sharp(file).resize(80, 80, { fit: 'inside' }).removeAlpha().raw()
+  const { data, info } = await sharp(file).resize(160, 160, { fit: 'inside' }).removeAlpha().raw()
     .toBuffer({ resolveWithObject: true });
   const px = [];
   for (let i = 0; i < data.length; i += info.channels) px.push([data[i], data[i + 1], data[i + 2]]);
@@ -67,19 +70,25 @@ export async function palette(file, keep = KEEP) {
       if (members.length) cents[j] = [0, 1, 2].map((k) => members.reduce((s, m) => s + m[k], 0) / members.length);
     }
   }
-  // Average the original RGB per cluster (more faithful than converting Lab back).
+  // A real pixel from each cluster, the one nearest the cluster's own average.
   const clusters = cents.map((c, j) => {
     const idx = assign.map((a, i) => (a === j ? i : -1)).filter((i) => i >= 0);
-    const rgb = [0, 1, 2].map((k) => idx.reduce((s, i) => s + px[i][k], 0) / (idx.length || 1));
-    return { lab: c, rgb, share: idx.length / px.length };
-  }).filter((c) => c.share > 0);
+    if (!idx.length) return null;
+    let best = idx[0];
+    let bestD = Infinity;
+    for (const i of idx) {
+      const d = dist2(lab[i], c);
+      if (d < bestD) { bestD = d; best = i; }
+    }
+    return { lab: lab[best], rgb: px[best], share: idx.length / px.length };
+  }).filter((c) => c && c.share >= MIN_SHARE);
 
   clusters.sort((a, b) => b.share - a.share);
   const out = [];
   for (const c of clusters) {
     const nearWhiteOrBlack = c.lab[0] > 97 || c.lab[0] < 4;
     if (nearWhiteOrBlack && c.share < 0.03) continue;
-    if (out.some((o) => dist2(o.lab, c.lab) < 12 ** 2)) continue; // too similar to one we have
+    if (out.some((o) => dist2(o.lab, c.lab) < SAME_COLOUR)) continue;
     out.push(c);
     if (out.length === keep) break;
   }

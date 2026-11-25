@@ -146,6 +146,7 @@ export default async function (eleventyConfig) {
     if (s === "sold") return "Sold";
     if (s === "private") return "Private Collection";
     if (s === "artist") return "Artist Collection";
+    if (s === "museum") return "Collection of IAMS Museum";
     if (art.price)
       return `Available · $${Number(art.price).toLocaleString("en-CA")}`;
     if (s === "available") return "Available";
@@ -354,140 +355,6 @@ export default async function (eleventyConfig) {
       } catch {
         return `<img class="gc-hero-photo" alt="${escapeAttr(alt)}" width="1600" height="800" fetchpriority="high">`;
       }
-    }
-  );
-
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "heroRevealImg",
-    async function (art) {
-      if (!art) return "";
-      const source = resolveImageSource(art.image);
-      let url = "";
-      let w = 800;
-      let h = 640;
-      if (source) {
-        try {
-          const metadata = await Image(source, {
-            widths: [1200],
-            formats: ["jpeg"],
-            outputDir: "_site/img",
-            urlPath: "/img/",
-          });
-          const jpeg = metadata.jpeg?.[0];
-          if (jpeg) {
-            url = jpeg.url;
-            w = jpeg.width;
-            h = jpeg.height;
-          }
-        } catch {
-          /* ignore */
-        }
-      }
-      if (!url) return "";
-      const alt = escapeAttr(artAlt(art));
-      return `<div class="gc-hero-painting" hidden>
-        <img data-src="${escapeAttr(url)}" width="${w}" height="${h}" alt="${alt}">
-        <p class="gc-hero-caption"><a href="${escapeAttr(art.oldPath)}">${escapeAttr(art.title)}</a> · painted here</p>
-      </div>`;
-    }
-  );
-
-  /**
-   * Landscape Tom Thomson paintings for the homepage reveal pool.
-   * Skips portrait files — the hang UI is sized for ~10×8 landscape boards.
-   */
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "heroRevealPoolJson",
-    async function (artworks) {
-      const thomson = new Set([
-        "spring-season-paintings",
-        "summer-season-paintings",
-        "fall-season-paintings",
-        "winter-season-paintings",
-        "studio-paintings",
-      ]);
-      const arts = (Array.isArray(artworks) ? artworks : []).filter(
-        (a) => a && a.kind !== "photo" && thomson.has(a.series)
-      );
-      const out = [];
-      const seen = new Set();
-      for (const art of arts) {
-        if (!art.image || seen.has(art.image)) continue;
-        const source = resolveImageSource(art.image);
-        if (!source) continue;
-        try {
-          const metadata = await Image(source, {
-            widths: [1200],
-            formats: ["jpeg"],
-            outputDir: "_site/img",
-            urlPath: "/img/",
-          });
-          const jpeg = metadata.jpeg?.[0];
-          if (!jpeg || jpeg.width / jpeg.height < 1.1) continue;
-          seen.add(art.image);
-          out.push({
-            src: jpeg.url,
-            w: jpeg.width,
-            h: jpeg.height,
-            alt: artAlt(art),
-            title: art.title,
-            href: art.oldPath,
-          });
-        } catch {
-          /* ignore */
-        }
-      }
-      return JSON.stringify(out).replace(/</g, "\\u003c");
-    }
-  );
-
-  /**
-   * Landscape Tom Thomson paintings for the homepage reveal pool.
-   * Only landscape files (w/h ≥ 1.1) so they hang correctly on the wide wall.
-   */
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "heroRevealPaintingsJson",
-    async function (artworks) {
-      const thomson = new Set([
-        "spring-season-paintings",
-        "summer-season-paintings",
-        "fall-season-paintings",
-        "winter-season-paintings",
-        "studio-paintings",
-      ]);
-      const arts = (Array.isArray(artworks) ? artworks : []).filter(
-        (a) => a && a.kind !== "photo" && thomson.has(a.series)
-      );
-      const seen = new Set();
-      const out = [];
-      for (const art of arts) {
-        const source = resolveImageSource(art.image);
-        if (!source) continue;
-        try {
-          const metadata = await Image(source, {
-            widths: [1200],
-            formats: ["jpeg"],
-            outputDir: "_site/img",
-            urlPath: "/img/",
-          });
-          const jpeg = metadata.jpeg?.[0];
-          if (!jpeg) continue;
-          if (jpeg.width / jpeg.height < 1.1) continue;
-          if (seen.has(jpeg.url)) continue;
-          seen.add(jpeg.url);
-          out.push({
-            src: jpeg.url,
-            w: jpeg.width,
-            h: jpeg.height,
-            alt: artAlt(art),
-            title: art.title,
-            href: art.oldPath,
-          });
-        } catch {
-          /* ignore */
-        }
-      }
-      return JSON.stringify(out).replace(/</g, "\\u003c");
     }
   );
 

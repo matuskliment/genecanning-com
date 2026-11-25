@@ -1,7 +1,7 @@
 {
   "label": "The Centenary Project · 1912–1917",
-  "title": "On the Trail of Tom Thomson",
-  "titleHtml": "On the Trail of<br> Tom Thomson",
+  "title": "On the Trail of Tom Thomson, 100 years later.",
+  "titleHtml": "On the Trail of<br> Tom Thomson,<br> 100 years later.",
   "heroImage": "img_2982.jpeg",
   "heroAlt": "Canoe as a painting table on the trail in Algonquin Park",
   "heroTitleX": "4%",
@@ -9,8 +9,8 @@
   "heroTitleSize": "4.2cqw",
   "heroObjectPosition": "50% 45%",
   "fieldNote": [
-    "“On the Trail of Tom Thomson, 100 Years Later” was my way of exploring his art and his way of working — paddling and painting his way into history all those years ago.",
-    "As author David Silcox said to me, it would end up being more of a journey about me than about Thomson. How right he was. That time in Algonquin changed me forever as an artist."
+    "This page explores my three years journey retracing the trails of Canadian iconic artist Tom Thomson and his time in Canada’s Algonquin Park.",
+    "This journey isn’t just about Thomson, it is also about me and my experiences in art. What I learned and observed along the way."
   ],
   "cta": "Read the story of the project",
   "ctaHref": "/on-the-trail-of-tom-thomson/project-overview.html",
@@ -18,31 +18,31 @@
   "seasonsTitle": "Explore by season",
   "seasons": [
     {
-      "label": "Spring",
+      "label": "Spring Studies",
       "href": "/on-the-trail-of-tom-thomson/spring-season-paintings/",
       "series": "spring-season-paintings",
       "coverSlug": "canoe-lake-early-spring-1st"
     },
     {
-      "label": "Summer",
+      "label": "Summer Studies",
       "href": "/on-the-trail-of-tom-thomson/summer-season-paintings/",
       "series": "summer-season-paintings",
       "coverSlug": "sunset-grand-lake-on-wood"
     },
     {
-      "label": "Fall",
+      "label": "Fall Studies",
       "href": "/on-the-trail-of-tom-thomson/fall-season-paintings/",
       "series": "fall-season-paintings",
       "coverSlug": "maple-on-fire-oil-on-wood"
     },
     {
-      "label": "Winter",
+      "label": "Winter Studies",
       "href": "/on-the-trail-of-tom-thomson/winter-season-paintings/",
       "series": "winter-season-paintings",
       "coverSlug": "winter-road-on-wood-panel"
     }
   ],
-  "continueTitle": "Continue the trail",
+  "continueTitle": "Continue on the trail",
   "continue": [
     {
       "id": "studio",
@@ -72,8 +72,12 @@
     }
   ],
   "craft": {
-    "title": "How each painting is framed",
-    "caption": "Field paintings measure 8″ × 10″ unframed. Each is framed in the frame shown here. The verso is signed, titled, dated, and carries Thomson project information.",
+    "title": "How each seasonal painting is framed",
+    "facts": [
+      "Field paintings measure 8″ × 10″ unframed.",
+      "Each is framed in the frame shown here.",
+      "The verso is signed, titled, dated, and carries Thomson project information."
+    ],
     "images": [
       {
         "file": "tt-frame-_med_hr.jpeg",

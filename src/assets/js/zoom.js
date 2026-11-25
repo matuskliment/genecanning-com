@@ -38,7 +38,6 @@ function setup(fig, img) {
   let factor = MIN_FACTOR;
   let drag = null;
 
-  img.style.cursor = 'zoom-in';
   for (const t of toggles) t.hidden = false;
 
   const setExpanded = (v) => toggles.forEach((t) => t.setAttribute('aria-expanded', String(v)));
@@ -86,7 +85,7 @@ function setup(fig, img) {
       if (!lens) return;
       lens.style.backgroundImage = `url("${big.src}")`;
       hint.textContent = matchMedia('(pointer: coarse)').matches
-        ? 'Drag to explore · tap “Look closely” to finish'
+        ? 'Drag to explore · tap “See it up close” to finish'
         : 'Move across the painting to explore · click to finish';
       place();
     };
@@ -149,6 +148,5 @@ function setup(fig, img) {
     }
   }
 
-  img.addEventListener('click', () => start());
   for (const t of toggles) t.addEventListener('click', () => (lens ? stop() : start()));
 }

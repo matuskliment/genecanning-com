@@ -6,6 +6,7 @@ layout: base.njk
   <nav class="breadcrumb" aria-label="Breadcrumb">{{ breadcrumb | safe }}</nav>
   {% endif %}
   <h1>{{ title }}</h1>
+  <span class="gc-knife" aria-hidden="true"></span>
   {% if seasonTabs %}
   <nav class="season-tabs" aria-label="Tom Thomson seasons">
     <a href="/on-the-trail-of-tom-thomson/spring-season-paintings/" {% if season == "spring" %}aria-current="page"{% endif %}>Spring</a>

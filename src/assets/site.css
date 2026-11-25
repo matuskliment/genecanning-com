@@ -96,6 +96,7 @@ summary:focus-visible {
 .prose { max-width: 68ch; }
 .prose a { text-decoration: underline; }
 .prose p { margin: 0 0 1.1em; }
+.prose strong { font-weight: 600; }
 .prose p:last-child { margin-bottom: 0; }
 
 h1, h2, h3 {
@@ -141,6 +142,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   color: var(--gc-lake);
   min-height: 44px;
   min-width: 0;
+  --gc-pencil-offset: -6px;
 }
 .gc-sig .gc-sig-svg { height: 52px; width: auto; display: block; }
 .gc-header .gc-tagline {
@@ -180,6 +182,26 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
 .gc-nav a.is-current {
   color: var(--gc-lake);
 }
+.gc-nav-drop { position: relative; display: inline-flex; align-items: center; }
+.gc-nav-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% - 4px);
+  left: 0;
+  z-index: 50;
+  min-width: 240px;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0;
+  background: var(--gc-canvas);
+  border: 1px solid var(--gc-birch);
+  box-shadow: 0 10px 28px rgba(30, 36, 32, 0.08);
+}
+.gc-nav-drop:hover .gc-nav-menu,
+.gc-nav-drop:focus-within .gc-nav-menu { display: flex; }
+.gc-nav-menu a { padding: 8px 16px; white-space: nowrap; }
+#project-overview,
+#explore-by-season { scroll-margin-top: 110px; }
 @media (max-width: 900px) {
   .gc-header .wrap {
     align-items: center;
@@ -201,6 +223,17 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
     border-bottom: 1px solid var(--gc-birch);
     padding-inline: 0;
   }
+  .gc-nav-drop { display: flex; flex-direction: column; align-items: stretch; }
+  .gc-nav-menu {
+    display: flex;
+    position: static;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+  .gc-nav-menu a { padding-left: 16px; }
 }
 
 /* Buttons */
@@ -241,6 +274,11 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   cursor: pointer;
 }
 .gc-tools { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+/* Buttons start at the picture, which sits inside the mat's padding. */
+.painting-layout .gc-tools { margin-left: 21px; margin-right: 21px; }
+@media (max-width: 700px) {
+  .painting-layout .gc-tools { margin-left: 15px; margin-right: 15px; }
+}
 
 /* Gallery grid */
 .gc-grid {
@@ -265,15 +303,17 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   color: var(--gc-spruce);
 }
 
-/* Painting page */
+/* Painting page. Horizontal margins stay auto so this block centres with the title. */
 .painting-layout {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 48px;
-  margin: 32px 0 64px;
+  margin-block: 32px 64px;
+  margin-inline: auto;
   align-items: start;
 }
 .painting-layout > * { min-width: 0; }
+.painting-layout .gc-mat { margin: 0; }
 @media (max-width: 700px) {
   .painting-layout { grid-template-columns: 1fr; gap: 28px; }
 }
@@ -322,9 +362,11 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   object-fit: contain;
   object-position: center;
 }
-.photo-page {
-  max-width: 960px;
-  margin-bottom: 64px;
+.photo-page { margin-bottom: 64px; }
+.photo-page figure {
+  margin: 0;
+  width: fit-content;
+  max-width: min(960px, 100%);
 }
 .gc-intro {
   padding-top: 40px;
@@ -638,6 +680,11 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   max-width: 68ch;
   color: var(--gc-spruce);
 }
+.bio-accomplishments {
+  margin: 1.6em 0 0.7em;
+  font: 600 22px/1.3 var(--gc-serif);
+  color: var(--gc-lake);
+}
 
 /* Thomson Trailhead hub */
 .trailhead { padding-block: 32px 8px; }
@@ -651,7 +698,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   left: var(--title-x, 4%);
   top: var(--title-y, 10%);
   right: 8%;
-  max-width: 18em;
+  max-width: 62%;
   z-index: 1;
 }
 .trailhead-label {
@@ -668,6 +715,7 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   color: var(--gc-gesso);
   text-shadow: 0 1px 3px rgba(30, 36, 32, 0.5);
 }
+.trailhead-hero-copy .gc-knife { background: var(--gc-gesso); margin-top: 12px; }
 .trailhead-tabs {
   display: flex;
   flex-direction: column;
@@ -739,12 +787,13 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   font: 17px/1.45 var(--gc-sans);
 }
 .trailhead-ledger h2 {
-  margin: 0 0 12px;
-  font: 600 14px/1.3 var(--gc-sans);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--gc-lichen);
+  margin: 0 0 4px;
+  font: 600 clamp(26px, 3vw, 34px)/1.2 var(--gc-serif);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--gc-lake);
 }
+.trailhead-ledger .gc-knife { margin-bottom: 8px; }
 .trailhead-ledger ul { list-style: none; margin: 0; padding: 0; }
 .trailhead-ledger li {
   padding: 16px 0;
@@ -752,19 +801,41 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
 }
 .trailhead-ledger li:last-child { border-bottom: 1px solid var(--gc-birch); }
 
+.trailhead-overview,
 .trailhead-seasons,
-.trailhead-continue,
-.trailhead-craft {
+.trailhead-continue {
   padding-block: 40px 8px;
   border-top: 1px solid var(--gc-birch);
   margin-top: 24px;
 }
+.trailhead-overview h2,
 .trailhead-seasons h2,
 .trailhead-continue h2 {
   margin: 0 0 4px;
   font: 600 clamp(26px, 3vw, 34px)/1.2 var(--gc-serif);
   color: var(--gc-lake);
 }
+.trailhead-overview-lead { margin-top: 24px; }
+.trailhead-overview-photo {
+  margin: 0 0 28px;
+  width: 100%;
+  max-width: 68ch;
+}
+.trailhead-overview-photo .gc-img,
+.trailhead-overview-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.trailhead-overview-words {
+  margin: 36px 0 12px;
+  font: 600 14px/1.3 var(--gc-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gc-lichen);
+}
+.trailhead-overview-thanks { margin-top: 1.4em; }
+.trailhead-story { margin-bottom: 64px; }
 .trailhead-season-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -859,25 +930,43 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   outline-offset: 4px;
 }
 
-.trailhead-craft { padding-bottom: 48px; }
-.trailhead-craft .label { margin: 0 0 16px; }
-.trailhead-craft-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  max-width: 480px;
+.trailhead-continue { padding-bottom: 48px; }
+.trailhead-craft {
+  margin-top: 20px;
+  padding-top: 28px;
+  border-top: 1px solid var(--gc-birch);
 }
-.trailhead-craft-fig {
+.trailhead-craft h3 {
   margin: 0;
-  flex: 1 1 160px;
-  max-width: 220px;
+  font: 600 22px/1.3 var(--gc-serif);
+  color: var(--gc-lake);
 }
-.trailhead-craft .caption {
-  font: 15px/1.4 var(--gc-sans);
-  color: var(--gc-lichen);
-  margin: 12px 0 0;
-  max-width: 48ch;
+.trailhead-craft-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 34ch);
+  gap: 28px 40px;
+  align-items: center;
+  margin-top: 24px;
 }
+.trailhead-craft-photos {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.trailhead-craft-fig { margin: 0; }
+.trailhead-craft-fig img { display: block; width: 100%; height: auto; }
+.trailhead-craft-facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font: 17px/1.5 var(--gc-sans);
+}
+.trailhead-craft-facts li {
+  padding: 16px 0;
+  border-top: 1px solid var(--gc-birch);
+}
+.trailhead-craft-facts li:last-child { border-bottom: 1px solid var(--gc-birch); }
 
 @media (max-width: 700px) {
   .trailhead { padding-block-start: 20px; }
@@ -936,6 +1025,8 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
   .trailhead-continue-mat,
   .trailhead-continue-photo { width: 100px; }
   .trailhead-continue-text .gc-title { font-size: 20px; }
+  .trailhead-craft-row,
+  .trailhead-craft-photos { grid-template-columns: 1fr; }
 }
 /* Short gallery/section notes — Gene’s wording, secondary voice, doesn’t compete with the grid */
 .gallery-note {

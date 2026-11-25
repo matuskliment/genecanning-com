@@ -77,60 +77,17 @@ body { background: var(--gc-ground); }
 .js img[data-gc-fade].is-loaded { opacity: 1; }
 
 /* --------------------------------------------------------------------------
-   Homepage hero — heading in the snow, letter card, "See what he painted here"
-   (hero-reveal.js). Photos never get a mat; mats are for paintings.
+   Homepage hero — heading in the snow, letter card.
    -------------------------------------------------------------------------- */
 .gc-hero { position: relative; container-type: inline-size; }
 .gc-hero-frame { position: relative; margin: 0; overflow: hidden; background: #E7E0D2; }
 .gc-hero-frame--home { aspect-ratio: 2 / 1; }
 .gc-hero-photo { display: block; width: 100%; height: 100%; object-fit: cover; }
-.gc-hero-photo, .gc-hero-painting { transition: opacity 450ms ease; }
-.gc-hero-painting {
-  position: absolute; inset: 0; background: #E7E0D2; opacity: 0;
-  --x: 52%; --y: 9%; --w: 40%; --caption-y: 74%;
-}
-.gc-hero-painting > img {
-  position: absolute; left: var(--x); top: var(--y); width: var(--w); height: auto;
-  box-shadow: 0 14px 30px rgba(30, 36, 32, .28), 0 3px 6px rgba(30, 36, 32, .2); background: #B7A98E;
-}
-.gc-hero-caption {
-  position: absolute; left: var(--x); top: var(--caption-y); margin: 0;
-  font: 15px/1.3 var(--gc-sans); color: var(--gc-lichen);
-}
-.gc-hero-caption a { color: var(--gc-spruce); }
-.gc-hero.is-painted .gc-hero-photo { opacity: 0; }
-.gc-hero.is-painted .gc-hero-painting { opacity: 1; }
-
-/* Brushstroke reveal: hero-reveal.js adds .gc-brush when masks are supported
-   and motion is allowed. The painting is uncovered by a dry-brush edge that
-   sweeps left to right (750ms); going back, the stroke lifts away. Without
-   .gc-brush the plain cross-fade above is used. */
-.gc-hero.gc-brush .gc-hero-photo { opacity: 1; transition: none; }
-.gc-hero.gc-brush .gc-hero-painting {
-  opacity: 1;
-  -webkit-mask-image: url("brush-mask.svg"); mask-image: url("brush-mask.svg");
-  -webkit-mask-size: 300% 100%; mask-size: 300% 100%;
-  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
-  -webkit-mask-position: 100% 0; mask-position: 100% 0;
-  transition: -webkit-mask-position 750ms cubic-bezier(.45, .05, .25, 1), mask-position 750ms cubic-bezier(.45, .05, .25, 1);
-}
-.gc-hero.gc-brush.is-painted .gc-hero-painting { -webkit-mask-position: 0 0; mask-position: 0 0; }
 .gc-hero-title {
   position: absolute; left: var(--title-x, 30%); top: var(--title-y, 4%); margin: 0;
   font: 600 var(--title-size, 4.4cqw)/1.05 var(--gc-serif); color: var(--gc-lake);
   text-shadow: 0 1px 0 rgba(251, 249, 244, 0.55), 0 0 18px rgba(251, 249, 244, 0.35);
 }
-.gc-hero-btn {
-  position: absolute; left: 2.5%; bottom: 6%; min-height: 48px; padding: 0 18px;
-  background: rgba(251, 249, 244, .95); color: var(--gc-spruce); border: 1.5px solid var(--gc-birch);
-  border-radius: 3px; box-shadow: 0 2px 8px rgba(30, 36, 32, .18); cursor: pointer;
-  font: 600 17px/1 var(--gc-sans); transition: background var(--gc-quick) ease, border-color var(--gc-quick) ease;
-}
-@media (hover: hover) and (pointer: fine) {
-  .gc-hero-btn:hover { background: var(--gc-canvas); border-color: var(--gc-lake); }
-}
-.gc-hero-btn:focus-visible { outline: 3px solid var(--gc-lake); outline-offset: 3px; }
-.gc-hero-btn[aria-busy="true"] { cursor: progress; }
 
 .gc-intro-row { display: flex; flex-direction: row-reverse; flex-wrap: wrap; gap: 40px 64px; align-items: flex-start; }
 .gc-letter {
@@ -141,7 +98,8 @@ body { background: var(--gc-ground); }
 }
 .gc-letter p { margin: 0; max-width: 34em; }
 .gc-recognition { flex: 5 1 280px; padding-top: 40px; font: 17px/1.4 var(--gc-sans); min-width: 0; }
-.gc-recognition h2 { margin: 0 0 8px; font: 600 14px/1.3 var(--gc-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--gc-lichen); }
+.gc-recognition h2 { margin: 0 0 4px; font: 600 clamp(26px, 3vw, 34px)/1.2 var(--gc-serif); letter-spacing: 0; text-transform: none; color: var(--gc-lake); }
+.gc-recognition .gc-knife { margin-bottom: 8px; }
 .gc-recognition ul { list-style: none; margin: 0; padding: 0; }
 .gc-recognition li { padding: 14px 0; border-top: 1px solid var(--gc-birch); }
 .gc-recognition li:last-child { border-bottom: 1px solid var(--gc-birch); }
@@ -157,16 +115,6 @@ body { background: var(--gc-ground); }
     text-shadow: none;
   }
   .gc-hero-title br { display: none; }
-  .gc-hero-btn {
-    left: max(8px, env(safe-area-inset-left, 0px));
-    right: auto;
-    bottom: max(8px, env(safe-area-inset-bottom, 0px));
-    min-height: 44px;
-    font-size: 15px;
-    padding: 0 12px;
-  }
-  .gc-hero-painting { --x: 16%; --y: 11%; --w: 68%; }
-  .gc-hero-caption { display: none; }
   .gc-intro-row { gap: 28px; }
   .gc-letter {
     flex: 1 1 100%;
@@ -227,8 +175,6 @@ body { background: var(--gc-ground); }
    0.1–1.3s  the photo develops, like a print in the tray
    0.7–1.2s  the heading settles into the snow
    0.9–1.5s  the letter is laid down
-   1.5–1.8s  "See what I painted here" appears
-   4.5s      a pencil line is drawn under it, once
    First visit also: 0.2–2.1s the signature is written stroke by stroke.
    Pure CSS: nothing waits on JavaScript. Reduced motion: everything instant.
    -------------------------------------------------------------------------- */
@@ -248,20 +194,8 @@ body { background: var(--gc-ground); }
 .gc-enter .gc-hero-title { animation: gc-settle 500ms var(--gc-settle) 700ms both; }
 .gc-enter .gc-letter { animation: gc-settle-lg 550ms var(--gc-settle) 900ms both; }
 .gc-enter .gc-recognition { animation: gc-fade 400ms ease 1100ms both; }
-.gc-enter .gc-hero-btn { animation: gc-fade 300ms ease 1500ms both; }
 @keyframes gc-settle { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @keyframes gc-settle-lg { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-
-/* After landing: a pencil line is drawn once under the button label. */
-.gc-hero-btn .gc-btn-label { position: relative; }
-.gc-enter .gc-hero-btn .gc-btn-label::after {
-  content: ""; position: absolute; left: -1px; right: -2px; bottom: -6px; height: 5px;
-  background: var(--gc-ochre); pointer-events: none;
-  -webkit-mask: url("pencil-line.svg") no-repeat 0 0 / 100% 100%; mask: url("pencil-line.svg") no-repeat 0 0 / 100% 100%;
-  clip-path: inset(0 100% 0 0);
-  animation: gc-pencil-once 500ms cubic-bezier(.4, .1, .3, 1) 4500ms forwards;
-}
-@keyframes gc-pencil-once { to { clip-path: inset(0 0 0 0); } }
 
 /* --------------------------------------------------------------------------
    Gallery filters that glide (gallery-filter.js)
@@ -437,6 +371,61 @@ p.gc-filter-count { margin-left: 0; }
   background: var(--gc-lake); border-color: var(--gc-lake); color: var(--gc-gesso); font-weight: 600;
 }
 .gc-tool:focus-visible { outline: 3px solid var(--gc-lake); outline-offset: 3px; }
+
+/* Full screen: the painting only, centred, never cropped. */
+.gc-mat:fullscreen,
+.gc-mat:-webkit-full-screen,
+.gc-mat.gc-fs-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 32px;
+  border: 0;
+  background: var(--gc-wall);
+  box-shadow: none;
+}
+.gc-mat.gc-fs-cover {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+.gc-mat:fullscreen .gc-img,
+.gc-mat:-webkit-full-screen .gc-img,
+.gc-mat.gc-fs-cover .gc-img,
+.gc-mat:fullscreen picture,
+.gc-mat:-webkit-full-screen picture,
+.gc-mat.gc-fs-cover picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  background: transparent;
+}
+.gc-mat:fullscreen img,
+.gc-mat:-webkit-full-screen img,
+.gc-mat.gc-fs-cover img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.gc-fs-exit {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.gc-fs-exit[hidden] { display: none; }
+html.gc-fs-lock { overflow: hidden; }
 
 .gc-reveal { animation: gc-reveal var(--gc-standard) var(--gc-settle) both; }
 @keyframes gc-reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }

@@ -7,6 +7,7 @@ title: "Original Paintings · Gene Canning"
 {% set pageData = pages['/original-paintings/index.html'] %}
 <div class="wrap page-intro">
   <h1>{{ pageData.title or "Original Paintings" }}</h1>
+  <span class="gc-knife" aria-hidden="true"></span>
   <div class="prose lede">
     {% for p in pageData.paragraphs %}<p>{{ p }}</p>{% endfor %}
   </div>

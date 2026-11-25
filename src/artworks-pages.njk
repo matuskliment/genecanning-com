@@ -32,16 +32,17 @@ eleventyComputed:
 
 <div class="wrap painting-layout">
   <div>
-    <figure class="gc-mat gc-zoom" id="painting" data-gc-zoom {% if zoomUrl %}data-zoom-src="{{ zoomUrl }}"{% endif %}>
+    <figure class="gc-mat gc-zoom" id="painting" data-gc-fullscreen data-gc-zoom {% if zoomUrl %}data-zoom-src="{{ zoomUrl }}"{% endif %}>
       {{ art.image | displayImg(art | artAlt) | safe }}
     </figure>
 
     <div class="gc-tools gc-noprint" role="toolbar" aria-label="Painting tools">
-      {% if art.widthIn and art.heightIn %}
-      <button type="button" class="gc-tool" data-gc-true-size-toggle aria-controls="true-size" aria-expanded="false" hidden>See it at true size</button>
-      {% endif %}
+      <button type="button" class="gc-tool" data-gc-fullscreen-toggle aria-controls="painting" aria-expanded="false" hidden>See it full screen</button>
       {% if zoomUrl %}
-      <button type="button" class="gc-tool" data-gc-zoom-toggle aria-controls="painting" aria-expanded="false" hidden>Look closely</button>
+      <button type="button" class="gc-tool" data-gc-zoom-toggle aria-controls="painting" aria-expanded="false" hidden>See it up close</button>
+      {% endif %}
+      {% if art.widthIn and art.heightIn %}
+      <button type="button" class="gc-tool" data-gc-true-size-toggle aria-controls="true-size" aria-expanded="false" hidden>See it in space</button>
       {% endif %}
     </div>
 
@@ -60,7 +61,7 @@ eleventyComputed:
       {% if art.medium %}<dt>Medium</dt><dd>{{ art.medium }}</dd>{% endif %}
       {% if sizeText %}<dt>Size</dt><dd>{{ sizeText }}{% if isThomsonField %} unframed{% endif %}</dd>{% endif %}
       {% if isThomsonField %}
-      <dt>Frame</dt><dd>As shown on the project title page</dd>
+      <dt>Frame</dt><dd>As shown on the Tom Thomson Project page.</dd>
       <dt>Verso</dt><dd>Signed, titled, dated, with Thomson project information</dd>
       {% endif %}
       {% if art.edition %}<dt>Edition</dt><dd>{{ art.edition }}</dd>{% endif %}

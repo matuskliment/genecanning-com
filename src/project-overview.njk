@@ -2,20 +2,35 @@
 permalink: /on-the-trail-of-tom-thomson/project-overview.html
 layout: base.njk
 section: thomson
-title: "Project Overview · On the Trail of Tom Thomson · Gene Canning"
+title: "Project Overview · Gene Canning"
+eleventyComputed:
+  description: "Gene Canning’s account of paddling and painting Tom Thomson’s routes through Algonquin Park."
 ---
-{% set pageData = pages['/on-the-trail-of-tom-thomson/project-overview.html'] %}
-<div class="wrap page-intro">
-  <nav class="breadcrumb"><a href="/on-the-trail-of-tom-thomson/">Tom Thomson Project</a></nav>
-  <h1>{{ pageData.title or "Project Overview" }}</h1>
-  <div class="prose" style="margin-bottom: 64px;">
-    {% for img in pageData.images %}
-      <figure class="gc-mat" style="margin: 0 0 24px; max-width: 720px;">
-        {{ img.file | displayImg(img.alt or pageData.title) | safe }}
+{% set overview = pages['/on-the-trail-of-tom-thomson/project-overview.html'] %}
+<div class="wrap page-intro trailhead-story">
+  <h1>Project Overview</h1>
+  <span class="gc-knife" aria-hidden="true"></span>
+  <div class="trailhead-overview-lead">
+    {% for img in overview.images %}
+      <figure class="gc-mat trailhead-overview-photo">
+        {{ img.file | displayImg(img.alt or "Project Overview") | safe }}
       </figure>
     {% endfor %}
-    {% for p in pageData.paragraphs %}
-      <p>{{ p }}</p>
+    <div class="prose">
+      {% for p in overview.paragraphs %}
+        {% if loop.index0 >= 1 and loop.index0 <= 4 %}
+          <p>{{ p }}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <h2 class="trailhead-overview-words">In Gene’s words</h2>
+  <div class="prose">
+    {% for p in overview.paragraphs %}
+      {% if loop.index0 >= 5 and loop.index0 < overview.paragraphs.length - 1 %}
+        <p>{{ p }}</p>
+      {% endif %}
     {% endfor %}
+    <p class="trailhead-overview-thanks">{{ overview.paragraphs[overview.paragraphs.length - 1] }}</p>
   </div>
 </div>

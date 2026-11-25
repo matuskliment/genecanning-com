@@ -148,6 +148,14 @@ function parseCaption(captionOriginal, seriesKey) {
       ));
       // Normalize "on Canvas Board" → keep as found
       if (/^on /i.test(m[0])) result.medium = cleanText(m[0].replace(/^on/i, "On"));
+      // Status words sit after the support ("Oil on Canvas SOLD"). Drop them
+      // before the title strip, or the medium phrase stays glued to the name.
+      result.medium = cleanText(
+        result.medium.replace(
+          /\s+(?:Private Collection|Collection of the Artist|Artist'?s Collection|SOLD)$/i,
+          ""
+        )
+      );
       break;
     }
   }

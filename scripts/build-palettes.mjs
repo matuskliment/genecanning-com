@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Sample five colours per artwork into src/_data/palettes.json.
+ * Sample the distinct colours in each artwork into src/_data/palettes.json.
  * Caches by image mtime in .cache/palettes-cache.json.
  */
 import fs from "node:fs";
@@ -11,6 +11,7 @@ import { palette } from "./palette.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const MIRROR = "/Users/matuskliment/www.genecanning.com";
+const ALGO = 2;
 const OUT = path.join(ROOT, "src/_data/palettes.json");
 const CACHE = path.join(ROOT, ".cache/palettes-cache.json");
 
@@ -70,14 +71,14 @@ for (const art of artworks) {
   }
   const mtime = fs.statSync(src).mtimeMs;
   const prev = cache[art.slug];
-  if (prev && prev._mtime === mtime && Array.isArray(prev.colours)) {
+  if (prev && prev._algo === ALGO && prev._mtime === mtime && Array.isArray(prev.colours)) {
     flat[art.slug] = prev.colours;
     reused++;
     continue;
   }
   try {
     const colours = await palette(src);
-    cache[art.slug] = { colours, _mtime: mtime };
+    cache[art.slug] = { colours, _mtime: mtime, _algo: ALGO };
     flat[art.slug] = colours;
     computed++;
     if (computed % 25 === 0) console.log(`palettes: ${computed} sampled…`);

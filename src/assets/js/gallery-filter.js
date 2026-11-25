@@ -35,14 +35,14 @@
  *    captions don't state the medium simply gets no medium filter.
  *  - Buttons whose value no card has are removed; the rest show their count,
  *    e.g. "Oil (4)".
- * data-status values: available, sold, private, artist. data-medium values:
+ * data-status values: available, sold, private, artist, museum. data-medium values:
  * oil, acrylic, graphite (add others as needed, lower case).
  */
 
 import { reducedMotion, animate } from './motion-utils.js';
 
 const MEDIUM_NOUN = { oil: 'oil paintings', acrylic: 'acrylic paintings', graphite: 'graphite drawings' };
-const STATUS_ADJ = { available: 'available', sold: 'sold', private: 'privately owned', artist: 'artist’s collection' };
+const STATUS_ADJ = { available: 'available', sold: 'sold', private: 'privately owned', artist: 'artist’s collection', museum: 'IAMS Museum' };
 
 export function initGalleryFilter() {
   const groups = new Map();

@@ -2,7 +2,7 @@
 title: "PBS TV's Journeys of an Artist"
 ---
 
-One of my greatest adventures was hosting a nationally released PBS television program released in 2005. I was fortunate enough to travel with world famous artists to the places they traveled to gather reference for their incredible paintings. After co-hosting and then hosting a live 4 day TV auction in Watertown New York, I was asked to host an art program. I developed the concept of a show about art and travel. The concept was approved and this show is the result! I learned so much about TV produciton, voice overs, and editing. We won a national cinematography award as well.
+One of my greatest adventures was hosting a nationally released PBS television program released in 2005. I was fortunate enough to travel with world famous artists to the places they traveled to gather reference for their incredible paintings. After co-hosting and then hosting a live 4 day TV auction in Watertown New York, I was asked to host an art program. I developed the concept of a show about art and travel. The concept was approved and this show is the result! I learned so much about TV production, voice overs, and editing. We won a national cinematography award as well.
 
 Below is the promotional video for the TV show. DVD copies of these 30 minute programs are available at the WPBS tv station.
 
@@ -16,7 +16,7 @@ Join Gene and famed watercolour artist Steve Hanks as the visit the New Orleans,
 
 Part two of Gene journeys with Steve Hanks takes viewers to Albuquerque New Mexico and southern California where they explore the ocean and Gene learns to surf.
 
-Michael Dumas and Gene explore the quite winter landscapes of Ontario Canada’s Algonquin Park, tracking wolves by helicopter and exploring the vastness of the landscape
+Michael Dumas and Gene explore the quite winter landscapes of Ontario Canada’s Algonquin Park, tracking wolves by helicopter and exploring the vastness of the landscape.
 
 Gene take a step back in time with civil war artist Bradley Schmell as they become part of the 47th infantry of Virginia in the battle of Cedar Creek in the Shenandoah Valley of Virginia. They experience a civil war re-enactment first hand.
 

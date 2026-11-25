@@ -1,23 +1,38 @@
 {% set path = page.url or "" %}
+{% set navHome = path == "/" or path == "" %}
 {% set navPaintings = path.indexOf("/original-paintings") == 0 %}
 {% set navThomson = path.indexOf("/on-the-trail-of-tom-thomson") == 0 %}
 {% set navPrints = path.indexOf("/prints") == 0 %}
 {% set navPbs = path.indexOf("pbs-tvs") >= 0 %}
+{% set navTeaching = path.indexOf("teaching") >= 0 %}
 {% set navAbout = path.indexOf("biography") >= 0 %}
 {% set navContact = path.indexOf("contact-gene") >= 0 or path.indexOf("thanks") >= 0 %}
 <header class="gc-header">
   <div class="wrap">
-    <a class="gc-sig" href="/">
+    <a class="gc-sig gc-pencil" href="/" aria-label="Gene Canning, home"{% if navHome %} aria-current="page"{% endif %}>
       {% include "signature.svg" %}
       <span class="gc-tagline">{{ site.tagline }}</span>
     </a>
     <button type="button" class="gc-nav-toggle" aria-expanded="false" aria-controls="site-nav" data-gc-nav-toggle>Menu</button>
     <nav id="site-nav" class="gc-nav" aria-label="Main">
+      <a class="gc-pencil" href="/biography.html" {% if navAbout %}aria-current="page"{% endif %}>About Gene</a>
       <a class="gc-pencil" href="/original-paintings/" {% if navPaintings %}aria-current="page"{% endif %}>Paintings</a>
-      <a class="gc-pencil" href="/on-the-trail-of-tom-thomson/" {% if navThomson %}aria-current="page"{% endif %}>Tom Thomson Project</a>
+      <div class="gc-nav-drop">
+        <a class="gc-pencil" href="/on-the-trail-of-tom-thomson/" {% if navThomson %}aria-current="page"{% endif %}>Tom Thomson Project</a>
+        <div class="gc-nav-menu" aria-label="Tom Thomson sections">
+          <a href="/on-the-trail-of-tom-thomson/project-overview.html">Project Overview</a>
+          <a href="/on-the-trail-of-tom-thomson/spring-season-paintings/">Spring Season Paintings</a>
+          <a href="/on-the-trail-of-tom-thomson/summer-season-paintings/">Summer Season Paintings</a>
+          <a href="/on-the-trail-of-tom-thomson/fall-season-paintings/">Fall Season Paintings</a>
+          <a href="/on-the-trail-of-tom-thomson/winter-season-paintings/">Winter Season Paintings</a>
+          <a href="/on-the-trail-of-tom-thomson/studio-paintings/">Studio Paintings</a>
+          <a href="/on-the-trail-of-tom-thomson/photos-from-the-trail/">Photos from the Trail</a>
+          <a href="/on-the-trail-of-tom-thomson/videos-from-the-trail/">Videos from the Trail</a>
+        </div>
+      </div>
       <a class="gc-pencil" href="/prints/" {% if navPrints %}aria-current="page"{% endif %}>Prints</a>
       <a class="gc-pencil" href="/pbs-tvs-journeys-of-an.html" {% if navPbs %}aria-current="page"{% endif %}>PBS Series</a>
-      <a class="gc-pencil" href="/biography.html" {% if navAbout %}aria-current="page"{% endif %}>About Gene</a>
+      <a class="gc-pencil" href="/teaching.html" {% if navTeaching %}aria-current="page"{% endif %}>Teaching</a>
       <a class="gc-pencil" href="/contact-gene.html" {% if navContact %}aria-current="page"{% endif %}>Contact</a>
     </nav>
   </div>

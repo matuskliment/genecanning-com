@@ -15,12 +15,11 @@ root.classList.add('js');
 
 const features = [
   ['img[data-gc-fade]', () => import('./image-fade.js'), 'initImageFade'],
-  ['[data-gc-hero]', () => import('./hero-reveal.js'), 'initHeroReveal'],
   ['[data-gc-filter-for]', () => import('./gallery-filter.js'), 'initGalleryFilter'],
-  ['[data-gc-gallery]', () => import('./lightbox.js'), 'initLightbox'],
   ['[data-gc-true-size]', () => import('./true-size.js'), 'initTrueSize'],
   ['[data-gc-audio]', () => import('./audio.js'), 'initAudio'],
   ['[data-gc-zoom]', () => import('./zoom.js'), 'initZoom'],
+  ['[data-gc-fullscreen]', () => import('./fullscreen.js'), 'initFullscreen'],
   ['[data-gc-trail]', () => import('./trail-map.js'), 'initTrailMap'],
 ];
 

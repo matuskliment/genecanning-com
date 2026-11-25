@@ -6,7 +6,7 @@ I only paint what I have experienced. I believe it keeps me true to my art, and 
 
 To gaze up at Michelangelo's Sistine Chapel, to see Mona Lisa’s smile, or to study Rembrandt’s brushwork. All these wonderous experiences inspire me, but so equally does the call of the loon, the breeze through the pines, or the site of a moose walking through the long marsh grasses.
 
-To me, these are the important experiences in art as in life. They all go into making me the artist that I am and that I will be. I am unfinshed canvas, life will define me one brushstroke at a time.
+To me, these are the important experiences in art as in life. They all go into making me the artist that I am and that I will be. I am unfinished canvas, life will define me one brushstroke at a time.
 
 I hope you will see that in my various paintings in this section of my website.
 
