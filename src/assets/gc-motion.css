@@ -393,6 +393,10 @@ p.gc-filter-count { margin-left: 0; }
   inset: 0;
   z-index: 80;
 }
+.gc-mat.gc-fs-cover.gc-fs-fading { opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .gc-mat.gc-fs-cover { transition: opacity 200ms ease; }
+}
 .gc-mat:fullscreen .gc-img,
 .gc-mat:-webkit-full-screen .gc-img,
 .gc-mat.gc-fs-cover .gc-img,

@@ -1,12 +1,17 @@
 /**
- * "See it full screen" — the painting only, across the screen.
- * Escape, or Leave full screen, returns to the painting page.
- * If the browser will not go truly full screen, the picture covers the window instead.
+ * "See it full screen" — the painting only, across the window.
+ * This stays an overlay on the page. It does not use the browser's
+ * full-screen mode, so closing it does not flash the window.
+ * Escape, Leave full screen, or a click on the picture returns to the page.
  *
  *   <figure id="painting" data-gc-fullscreen>…</figure>
  *   <button type="button" class="gc-tool" data-gc-fullscreen-toggle
  *           aria-controls="painting" aria-expanded="false" hidden>See it full screen</button>
  */
+
+import { reducedMotion } from './motion-utils.js';
+
+const FADE_MS = 200;
 
 export function initFullscreen() {
   for (const fig of document.querySelectorAll('[data-gc-fullscreen]')) {
@@ -30,8 +35,8 @@ function setup(fig) {
   exit.hidden = true;
   fig.append(exit);
 
-  const nativeEl = () => document.fullscreenElement || document.webkitFullscreenElement;
-  const isOn = () => nativeEl() === fig || fig.classList.contains('gc-fs-cover');
+  let closing = false;
+  const isOn = () => fig.classList.contains('gc-fs-cover');
 
   const sync = () => {
     const on = isOn();
@@ -42,31 +47,47 @@ function setup(fig) {
     exit.hidden = !on;
   };
 
-  const enter = async () => {
-    const req = fig.requestFullscreen || fig.webkitRequestFullscreen;
-    if (req) {
-      try {
-        await req.call(fig);
-        return;
-      } catch {
-        /* Fall through to the in-page cover. */
-      }
-    }
+  const enter = () => {
+    if (isOn() || closing) return;
     fig.classList.add('gc-fs-cover');
     document.documentElement.classList.add('gc-fs-lock');
+    if (!reducedMotion()) fig.classList.add('gc-fs-fading');
     sync();
+    exit.focus();
+    if (reducedMotion()) return;
+    // Paint at opacity 0, then fade in.
+    void fig.offsetWidth;
+    fig.classList.remove('gc-fs-fading');
   };
 
-  const leave = async () => {
-    if (nativeEl() === fig) {
-      const exitFs = document.exitFullscreen || document.webkitExitFullscreen;
-      if (exitFs) {
-        try { await exitFs.call(document); } catch { /* already closed */ }
-      }
-    }
-    fig.classList.remove('gc-fs-cover');
+  const finishLeave = () => {
+    if (!isOn() && !closing) return;
+    closing = false;
+    fig.classList.remove('gc-fs-cover', 'gc-fs-fading');
     document.documentElement.classList.remove('gc-fs-lock');
     sync();
+    toggles[0]?.focus();
+  };
+
+  const leave = () => {
+    if (!isOn() || closing) return;
+    if (reducedMotion()) {
+      finishLeave();
+      return;
+    }
+    closing = true;
+    fig.classList.add('gc-fs-fading');
+    let settled = false;
+    const done = (event) => {
+      if (settled) return;
+      if (event && event.target !== fig) return;
+      if (event && event.propertyName && event.propertyName !== 'opacity') return;
+      settled = true;
+      fig.removeEventListener('transitionend', done);
+      finishLeave();
+    };
+    fig.addEventListener('transitionend', done);
+    window.setTimeout(done, FADE_MS + 60);
   };
 
   const toggle = () => (isOn() ? leave() : enter());
@@ -80,9 +101,10 @@ function setup(fig) {
     e.stopPropagation();
     leave();
   });
-  document.addEventListener('fullscreenchange', sync);
-  document.addEventListener('webkitfullscreenchange', sync);
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && fig.classList.contains('gc-fs-cover')) leave();
+    if (e.key === 'Escape' && isOn()) {
+      e.preventDefault();
+      leave();
+    }
   });
 }
