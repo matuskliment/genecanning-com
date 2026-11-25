@@ -199,7 +199,13 @@ h3 { font-size: 24px; margin: 0 0 0.4em; }
 }
 .gc-nav-drop:hover .gc-nav-menu,
 .gc-nav-drop:focus-within .gc-nav-menu { display: flex; }
-.gc-nav-menu a { padding: 8px 16px; white-space: nowrap; }
+.gc-nav-menu a { padding: 8px 16px; white-space: nowrap; width: 100%; }
+.gc-nav-menu a:hover,
+.gc-nav-menu a:focus-visible {
+  background: var(--gc-lake);
+  color: var(--gc-gesso);
+  font-weight: 600;
+}
 #project-overview,
 #explore-by-season { scroll-margin-top: 110px; }
 @media (max-width: 900px) {
